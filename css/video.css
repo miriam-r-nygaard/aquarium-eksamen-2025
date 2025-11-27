@@ -622,7 +622,6 @@ kirugfisk
   top: 200px;
   left: -140px;
   z-index: 1;
-  pointer-events: bounding-box;
   animation: sharkani 25s linear infinite;
 }
 

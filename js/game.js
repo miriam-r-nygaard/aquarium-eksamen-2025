@@ -108,7 +108,7 @@ const startAgainButton = document.getElementById("start-again-button");
 // startTimer();
 // --- Setup game ---
 function setupGame() {
-  const intro = new Audio("../assets/audio/balladeIHavet.mp3");
+  const intro = new Audio("../assets/audio/balladenhavet.mp3");
   intro.play();
   itemsContainer.innerHTML = "";
   document

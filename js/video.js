@@ -3,40 +3,6 @@
 knapper
 -------------------------------------------------*/
 
-/* // simple script at bottom before </body>
-document.querySelector(".lucide-play").addEventListener("click", () => {
-  document.querySelector(".scene").style.animationPlayState = "running";
-  console.log("running lucidBtn play ");
-  document.querySelector(".scene").classList.add("running");
-  //   document.querySelector('.scene::after').style.animationPlayState = 'running';
-  document
-    .querySelectorAll("*")
-    .forEach((el) => (el.style.animationPlayState = "running"));
-});
-
-document.querySelector(".lucide-pause").addEventListener("click", () => {
-  document.querySelector(".scene").style.animationPlayState = "paused";
-  //   document.querySelector('.scene::after').style.animationPlayState = 'paused';
-  document.querySelector(".scene").classList.add("paused");
-
-  console.log("running lucideBtn pause");
-  document
-    .querySelectorAll("*")
-    .forEach((el) => (el.style.animationPlayState = "paused"));
-});
-
-//fix stop knap!
-document.querySelector(".lucide-stop").addEventListener("click", () => {
-  document.querySelector(".scene").style.animationPlayState = "unset";
-  //   document.querySelector('.scene::after').style.animationPlayState = 'paused';
-  // document.querySelector('.scene').classList.add('paused');
-
-  console.log("running lucideBtn stop");
-  //document.querySelectorAll('*').forEach(el => setAttribute('animaiton',el.style.animationPlayState));
-});
-
-*/
-
 /* -----------------------------------------------
 listerner til lyd
 -------------------------------------------------*/
@@ -149,18 +115,7 @@ if (pudserFisk3) {
   });
 }
 //pindsvinefisk
-/* if (pindsvineFisk) {
-  pindsvineFisk.addEventListener("click", () => {
-    soundPindsvineFisk.play();
-  });
-}
 
-if (bangePindsvindefisk) {
-  bangePindsvindefisk.addEventListener("click", () => {
-    soundBangePindsvineFisk.play();
-  });
-}
-*/
 if (nuttePrutteContainer) {
   nuttePrutteContainer.addEventListener("click", () => {
     console.log("TESTPUNKT");

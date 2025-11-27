@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video med fisk</title>
+    <!-- her ligger vores stylesheet-->
+    <link rel="stylesheet" href="css/video.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/icons/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <!-- denne sektion har hele scenen i sig-->
+    <section class="scene">
+      <!-- her er alle bg elementerne-->
+      <div class="bg">
+        <img src="./assets/svg/bgreef-h.svg" class="bg-rev-h" alt="reef" />
+        <img src="./assets/svg/bgreef-v.svg" class="bg-rev-v" alt="reef" />
+        <img
+          src="./assets/svg/mellemgrund-sand.svg"
+          class="melgr-sand"
+          alt="sand"
+        />
+        <img src="./assets/svg/rev-forgrund.svg" class="forgr-rev" alt="reef" />
+        <img
+          src="./assets/svg/forgrund-sand.svg"
+          class="forgr-sand"
+          alt="sand"
+        />
+        <img
+          src="./assets/svg/sten-forgrund.svg"
+          class="forgr-sten"
+          alt="stones"
+        />
+      </div>
+      <!-- nedenfor er alle fiskene-->
+      <!--Tang-->
+      <img src="./assets/svg/tang2.svg" class="tang1" alt="tang" />
+      <img src="./assets/svg/tang2.svg" class="tang2" alt="tang" />
+      <!--vandmand-->
+      <img
+        src="./assets/svg/hjaelpfisk.svg"
+        class="vandmand"
+        id="vandMand"
+        alt="vandmand"
+      />
+      <!--koraller-->
+      <img src="./assets/svg/plante.svg" class="koral" alt="coral" />
+      <img src="./assets/svg/plante.svg" class="koral2" alt="coral" />
+      <img src="./assets/svg/plante.svg" class="koral3" alt="coral" />
+      <!--Søpindsvin-->
+      <img
+        src="./assets/svg/sea-urchin.svg"
+        class="sea-urchin"
+        alt="sea urchin"
+      />
+      <img
+        src="./assets/svg/sea-urchin.svg"
+        class="sea-urchin-2"
+        alt="sea urchin2"
+      />
+      <img
+        src="./assets/svg/sea-urchin.svg"
+        class="sea-urchin-3"
+        alt="sea urchin3"
+      />
+      <!--haj-->
+      <img src="./assets/svg/shark.svg" class="shark" id="haj" alt="shark" />
+      <!--krabbe-->
+      <img src="./assets/svg/crab.svg" class="crab" id="krabbe" alt="crab" />
+      <!--fisk-->
+      <img src="./assets/svg/fisk.svg" class="fisk" id="ræveFjæs1" alt="fisk" />
+      <img
+        src="./assets/svg/fisk.svg"
+        class="fisk2"
+        id="ræveFjæs2"
+        alt="fisk"
+      />
+      <!--pudserfisk-->
+      <img
+        src="./assets/svg/fisk-var-1.svg"
+        class="fisk-var1"
+        id="pudserFisk1"
+        alt="fisk"
+      />
+      <img
+        src="./assets/svg/fisk-var-2.svg"
+        class="fisk-var2"
+        id="pudserFisk2"
+        alt="fisk"
+      />
+      <img
+        src="./assets/svg/fisk-var-3.svg"
+        class="fisk-var3"
+        id="pudserFisk3"
+        alt="fisk"
+      />
+      <!-- nutte/ pufferfish-->
+      <div class="nutte-prutte">
+        <img
+          src="./assets/svg/nutte.svg"
+          class="nutte"
+          id="pindsvineFisk"
+          alt="pufferfish"
+        />
+        <!-- nutte/ pufferfish bange-->
+        <img
+          src="./assets/svg/nutte-puff.svg"
+          class="nutte-bange"
+          id="bange-pindsvineFisk"
+          alt="pufferfish"
+        />
+      </div>
+      <!--tun-->
+      <img src="./assets/svg/tun.svg" class="tun" id="tunFisk" alt="tuna" />
+      <!--klovnfisk-->
+      <img
+        src="./assets/svg/nemo.svg"
+        class="nemo"
+        id="nemoFisk"
+        alt="klovnfisk"
+      />
+      <img
+        src="./assets/svg/klovnfisk.svg"
+        class="klovnfisk"
+        id="klovnFisk"
+        alt="klovnfisk"
+      />
+      <!--kirugfisk-->
+      <img
+        src="./assets/svg/kirugfisk.svg"
+        class="kirugfisk"
+        id="kirugFisk"
+        alt="kirugfisk"
+      />
+      <div class="fish"></div>
+    </section>
+
+    <div class="controllers">
+      <button class="pushable">
+        <a class="front" href="./index.html">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-house-icon lucide-house"
+          >
+            <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+            <path
+              d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+            />
+          </svg>
+        </a>
+      </button>
+      <button class="pushable">
+        <a class="front" onclick="document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen()">
+         
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-maximize-icon lucide-maximize"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+    </a>
+      <!-- <button class="pushable">
+        <span class="front">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-undo2-icon lucide-undo-2"
+          >
+            <path d="M9 14 4 9l5-5" />
+            <path
+              d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"
+            />
+          </svg>
+        </span>
+      </button> -->
+    </div>
+    <!-- link til javascript -->
+    <script src="./js/video.js"></script>
+  </body>
+</html>

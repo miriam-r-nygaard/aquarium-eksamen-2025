@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap');
+@import url("./controllers.css");
+
+:root {
+  --duration: 120s;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #002b44;
+}
+
+.scene {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* make bg images layer properly */
+.bg img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  left: 0;
+}
+
+.paused{
+  animation-play-state: paused;
+}
+
+.running{
+  animation-play-state: running;
+}
+
+.timeline{
+    top: 10vh;
+    left:4vw;
+    position: absolute;
+    color: #fff;
+    font-size: 36px;
+    font-family: "Londrina Solid", sans-serif;
+}
+
+.controllers{
+  position: absolute;
+  top:4vh;
+  right: 4vw;
+}
+
+/* Background reef fades in slowly */
+#bg-rev {
+  opacity: 0;
+  animation: fadeIn var(--duration) linear forwards;
+  animation-delay: 10s;
+}
+
+.melgr-sand {
+  opacity: 0;
+  animation: fadeIn var(--duration) linear forwards;
+  animation-delay: 15s;
+}
+
+.forgr-rev {
+  opacity: 0;
+  animation: fadeIn var(--duration) linear forwards;
+  animation-delay: 50s;
+}
+
+/* Fish movement across screen */
+.fisk {
+  position: absolute;
+  bottom: 20%;
+  left: -150px;
+  width: 100px;
+  animation: swim var(--duration) linear forwards;
+  animation-delay: 30s;
+}
+
+@keyframes swim {
+  0% { transform: translateX(0); opacity: 0; }
+  5% { opacity: 1; }
+  90% { transform: translateX(110vw); opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Pufferfish float */
+.nutte {
+  position: absolute;
+  bottom: 30%;
+  left: 30%;
+  width: 120px;
+ /* animation: float var(--duration) ease-in-out forwards;
+  animation-delay: 60s;*/
+  
+}
+
+.nutte.zoomin, .nutte{
+  animation: appearNutte var(--duration) linear forwards;
+}
+
+/* 
+@keyframes nuttein {
+  from{
+
+  }
+  to{
+    transform: matrix3d();
+  }
+} */
+
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-40px); }
+}
+
+/* Fade-in keyframe reused */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+.sceneProgress {
+  position: absolute;
+  bottom: 10px;
+  left: 5%;
+  width: 0%;
+  height: 6px;
+  background: lime;
+  animation: progress var(--duration) linear forwards;
+}
+
+@keyframes progress {
+  0% { width: 0%; }
+  100% { width: 90%; }
+}
+
+.marker{}
+:root { --duration: 120s; }
+
+.marker,
+.creature {
+  /* each element sets its own --delay inline */
+  animation-duration: var(--duration);
+  animation-delay: var(--delay);
+  animation-fill-mode: both;     /* keep first/last frame */
+  animation-timing-function: linear;
+}
+
+/* labels */
+.marker {
+  opacity: 0;
+  animation-name: fadeIn;
+}
+
+/* images */
+.creature {
+  position: absolute;
+  right: 15%;
+  width: 80px;
+  opacity: 0;
+  transform: translateY(40px) scale(0.9);
+}
+.tang{
+  animation: fadeIn 10s 10s linear forwards;
+}
+
+.haj{
+  animation: appearHaj var(--duration) 28s linear forwards;
+
+}
+
+/* KEYFRAMES — no calc/vars in selectors */
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  2%   { opacity: .5; }   /* quick fade in after the delay kicks in */
+  90%  { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+@keyframes appear {
+  0%   { opacity: 0; transform: translateY(40px) scale(0.9); }
+  5%   { opacity: 1; transform: translateY(0)     scale(1); }
+  90%  { opacity: 1; transform: translateY(0)     scale(1); }
+  100% { opacity: 0; transform: translateY(-10px) scale(0.98); }
+}
+
+@keyframes appearNutte {
+  0%   { opacity: 0; transform: translateY(40px) scale(0.1); }
+  5%   { opacity: 1; transform: translateY(15vh)     scale(2); }
+  50% {transform:rotate(-5%)}
+  51% {transform:rotate(5%)}
+  52% {transform:rotate(-5%)}
+  53% {transform:rotate(5%)}
+  54% {transform:rotate(-5%)}
+  55% {transform:rotate(5%)}
+  90%  { opacity: 1; transform: translateY(29vh) scale(3); }
+  100% { opacity: 0; transform: translateY(-10px) scale(3); }
+}
+
+@keyframes appearHaj {
+  0%   { opacity: 0; transform: translateZ(1000px) scale(0.1); }
+  5%   { opacity: 1; transform: translateX(45vh) scale(1); }
+  90%  { opacity: 1; transform: translateY(0) scale(2.2); }
+  100% { opacity: 1; transform: translateY(0) scale(3.5); }
+}

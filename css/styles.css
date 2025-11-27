@@ -1,0 +1,310 @@
+@import url("./controllers.css");
+@import url("./delfiner.css");
+
+:root {
+  --sten-lift: -250px; 
+  --sand-lift: -247px; 
+}
+
+html, body{
+  margin:0;
+	height: fit-content;
+	background: linear-gradient(#A2BFEB 0%, #315B9A 77%);
+	position:relative;
+  overflow: hidden; /* disables scroll */
+}
+
+header{
+  position: absolute;
+  z-index: 100;
+  top:0;
+  right:0;
+  margin:8px;
+}
+
+.home{
+  position: absolute;
+	font-size:22px;
+	width: 200px;
+	height:200px;
+  top: 40px;
+  left: 50px;
+  transform: scale(.5);
+    animation: floating 2s ease-in-out infinite alternate;
+
+}
+
+@keyframes floating {
+  from { transform: translateY(0px); }
+  to { transform: translateY(15px); }
+}
+
+.speak-bubble{
+  background: url('./../assets/svg/speak-bubble.svg') no-repeat;
+  height:200px;
+  width:200px;
+}
+
+.speak-bubble *{
+  position: absolute;
+}
+
+
+.home svg{
+  height: 100%;
+  height:100%;
+
+}
+
+.leg{
+	animation:legAnim 4s infinite;
+}
+
+@keyframes legAnim{
+	from{transform:rotateY(15deg)}
+	to{transform:rotateY(-15deg)}
+}
+
+
+.items {
+  position: fixed;
+  top: 10px;
+  width: 100vw;
+  display: flex;
+  gap: 10px;
+  z-index: 100;
+  justify-content: center;
+}
+
+.items img {
+    width: 50px;
+    height: 50px;
+}
+.item {
+  width: 70px;
+  transition: filter 0.3s ease;
+}
+
+.fish {
+  position: absolute; 
+  animation: swimFish 14s linear infinite;
+  height:300px;
+  width:auto;
+}
+
+
+/* .fart {
+  position: relative;
+}
+
+.fart {
+  opacity: 0;
+} */
+
+.fart-bubble {
+  position: absolute;
+  width: 30px; 
+  height: 30px;
+  z-index:200;
+  pointer-events: none;
+  background-image: url('../assets/svg/speak-bubble.svg');
+  background-size: cover;
+  filter: hue-rotate(90deg); /* gør den grønlig */
+  transform-origin: center center;
+  animation: bubblePop 0.5s infinite;
+}
+
+.fart-bubble {
+  position: absolute;
+  width: 30px; 
+  height: 30px;
+  z-index:200;
+  pointer-events: none;
+  /* background-image: url('../assets/svg/fart2.svg'); */
+  background-size: cover;
+  filter: hue-rotate(90deg); /* gør den grønlig */
+  transform-origin: center center;
+  animation: bubblePop 0.5s infinite;
+}
+
+.fart-bubble:nth-child(1n) {
+  background-image: url('../assets/svg/fart1.svg');
+}
+
+.fart-bubble:nth-child(2n) {
+  background-image: url('../assets/svg/fart3.svg');
+}
+
+.fart-bubble:nth-child(3n) {
+  background-image: url('../assets/svg/fart2.svg');
+}
+
+@keyframes bubblePop {
+  0% {
+    transform: translateY(0) scale(0.5);
+  }
+  50% {
+    transform: translate(10px, -60px) scale(1);
+  }
+  100% {
+    transform: translate(-10px, -100px) scale(0.3);
+  }
+}
+
+
+.reje{
+  position: relative;
+  bottom:120px;
+  transform: scale(.2);
+  z-index: 100;
+}
+
+@keyframes swimFish {
+  0% {
+    left: 100%;
+    
+  }
+  100% {
+    left: 0;
+  }
+}
+
+
+.swimmer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: auto;
+  height:140px;
+	transition:ease all .1s;
+}
+
+.carried-trash {
+  animation: wiggle 0.6s infinite ease-in-out alternate;
+}
+
+.seaweed {
+  animation: wiggle 2s infinite ease-in-out alternate;
+}
+@keyframes wiggle {
+  from { transform: rotate(-5deg); }
+  to { transform: rotate(5deg); }
+}
+
+
+.nemo {
+    position: absolute; 
+    animation: nemoSwim 7s ease-in infinite;
+    top: 2000px;
+}
+
+@keyframes nemoSwim {
+0% {
+  right: 100%;
+}
+
+100% {
+  right: 0%;
+}
+}
+
+.dory {
+  position: absolute;
+  animation: dorySwim  7s ease-in-out infinite;
+  top: 2500px;
+}
+
+@keyframes dorySwim {
+  0% {
+    right: 100% 
+  }
+
+  100% {
+    right: 0;
+  }
+}
+
+.fiskVar1 {
+  position: absolute;
+  animation: fiskVar1Swim 11s linear infinite;
+  top: 500px;
+}
+
+@keyframes fiskVar1Swim {
+    0% {
+    right: 100% 
+  }
+
+  100% {
+    right: 0;
+  }
+}
+
+.fiskVar2 {
+  position: absolute;
+  animation: fiskVar2Swim 11.5s linear infinite;
+  top: 480px;
+}
+
+@keyframes fiskVar2Swim {
+    0% {
+    right: 100% 
+  }
+
+  100% {
+    right: 0;
+  }
+}
+
+.fiskVar3 {
+  position: absolute;
+  animation: fiskVar3Swim 12s linear infinite;
+  top: 520px;
+}
+
+@keyframes fiskVar3Swim {
+    0% {
+    right: 100% 
+  }
+
+  100% {
+    right: 0;
+  }
+}
+
+.sten {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  width: 100%;
+  height: auto;
+  min-width: 100%;
+  display: block;
+  bottom:0;
+  /* transform: translateY(var(--sten-lift));  */
+}
+
+.sand {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  min-width: 100%;
+  display: block;
+  z-index: 1; 
+  /* transform: translateY(var(--sand-lift)); */
+  pointer-events: none; /
+
+}
+
+.trash{ 
+  height:70px;
+  width:auto;
+}
+
+
+
+
+
+

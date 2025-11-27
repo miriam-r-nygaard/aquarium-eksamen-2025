@@ -1,0 +1,252 @@
+@import url("./controllers.css");
+@import url("./delfiner.css");
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Londrina+Solid:wght@100;300;400;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+h1 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 3rem;
+}
+
+body {
+  background-image: radial-gradient(red, green, #579AD1);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: 100% 100%;
+  overflow: hidden;
+  background: radial-gradient(#579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1, #0061ff, #579AD1);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.mainCharacterHolder{
+    height: 75vh;
+    width: 100vw;
+
+}
+
+.speak-bubble {
+  display: inline-block;
+  animation: talk 1.2s infinite ease-in-out;
+  transform-origin: bottom center;
+}
+
+/* Different bubbles start at slightly different times */
+.speak-bubble:nth-child(1) {
+  animation-delay: 0s;
+  transform: scale(.5);
+}
+
+.speak-bubble:nth-child(2) {
+  animation-delay: 0.2s;
+  transform: scale(.7);
+}
+
+.speak-bubble:nth-child(3) {
+  animation-delay: 0.4s;
+  transform: scale(.8);
+}
+
+.speak-bubble:nth-child(4) {
+  animation-delay: 0.6s;
+  transform: scale(5);
+}
+
+@keyframes talk {
+
+  0%,
+  100% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  25% {
+    transform: scale(1.08);
+    opacity: 0.95;
+  }
+
+  50% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+
+  75% {
+    transform: scale(1.05);
+  }
+}
+
+
+/* css til tekst display tag dette her*/
+.tooltip {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background-color: rgb(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.35;
+  max-width: min(320px, 90vw);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25 ease, transform 0.25s ease;
+  pointer-events: none;
+  /* så den ikke fanger musen, når du kører hen over den*/
+  z-index: 1000;
+}
+
+/* bruges til at toggle imellem*/
+
+.tooltip.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.options {
+  position: absolute;
+  z-index: 100;
+  bottom: 150px;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  gap:60px;
+  height: 80px;
+  align-items: end;
+  pointer-events: none;
+}
+
+.options a {
+  transform: scale(1);
+  transition: ease .2s all;
+  pointer-events: auto;
+
+}
+
+.options a:hover {
+  transform: scale(1.1);
+}
+
+.options a:hover~.nutte {
+  transform: scale(1.1);
+}
+
+/*
+.speak-bubble{
+    animation: ;
+}
+*/
+
+.landing {
+  display: flex;
+  justify-content: unset;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  height: calc(100vh - 80px);
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.landing h1,
+.landing p {
+  font-family: "Londrina Solid", sans-serif;
+  text-align: center;
+  font-size: 32px;
+}
+
+.landing object {
+  /* animation: float 6s ease-in-out infinite; */
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.25));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Keyframes for mild floating animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.character {
+  animation: float 4s ease-in-out infinite;
+}
+
+.landing object:hover {
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.3)) brightness(1.05) saturate(1.1);
+}
+
+
+/* Swap animations */
+.swapped-right {
+  transform: translateX(50vw);
+  position: absolute;
+  z-index: 100;
+}
+
+.swapped-left {
+  transform: translateX(20vw);
+  position: absolute;
+  z-index: 100;
+}
+
+.vandmand {
+  transform: translateX(50vw);
+  position: absolute;
+  z-index: 100;
+}
+
+.nutte {
+  transform: translateX(20vw);
+  position: absolute;
+  z-index: 100;
+}
+
+#nutte,
+#vandmand {
+  transition: ease all .2s;
+}
+
+.responsive {
+  width: 50%;
+  max-width: 400px;
+  height: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .responsive {
+    width: 40%;
+    max-width: 180px;
+    height: auto;
+  }
+
+  .options {
+    gap: 4px;
+    /* bottom:16px; */
+  }
+
+  .options a {
+    transform: scale(1);
+  }
+
+  .landing h1 {
+    font-size: 18px;
+  }
+
+  .landing p {
+    font-size: 16px;
+  }
+}

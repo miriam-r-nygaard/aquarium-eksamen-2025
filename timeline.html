@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video med fiiiisk</title>
+    <!-- her ligger vores stylesheet-->
+    <link rel="stylesheet" href="css/video2.css" />
+    <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <section class="scene">
+      <div class="bg">
+        <img height="100%" src="./assets/svg/bg-rev.svg" id="bg-rev" alt="reef" />
+        <img
+          src="./assets/svg/mellemgrund-sand.svg"
+          class="melgr-sand"
+          alt="sand"
+        />
+        <img height="100%" src="./assets/svg/rev-forgrund.svg" class="forgr-rev" alt="reef" />
+        <img
+          src="./assets/svg/forgrund-sand.svg"
+          class="forgr-sand"
+          alt="sand"
+        />
+        <img
+          src="./assets/svg/sten-forgrund.svg"
+          class="forgr-sten"
+          alt="stones"
+        />
+      </div>
+      <img src="./assets/svg/nutte.svg" class="nutte" alt="pufferfish" />
+      <img src="./assets/svg/fisk.svg" class="fisk" alt="fisk" />
+      <div class="fish"></div>
+  <div class="timeline">
+  <div class="marker" style="--delay: 0s">~1 milliard år</div>
+   <img src="./assets/svg/tang.svg" class="creature tang" style="--delay: 0s">
+
+  <div class="marker" style="--delay: 12s">~600 mio. år</div>
+  <img src="./assets/svg/hjaelpfisk.svg" class="creature vandmand" style="--delay: 12s">
+
+  <div class="marker" style="--delay: 24s">~540 mio. år</div>
+  <img src="./assets/svg/plante.svg" class="creature plante" style="--delay: 24s"> 
+
+  <div class="marker" style="--delay: 36s">~450 mio. år</div>
+  <img src="./assets/svg/shark.svg" class="creature haj" style="--delay: 36s">
+
+  <div class="marker" style="--delay: 48s">~200 mio. år</div>
+  <img src="./assets/svg/crab.svg" class="creature krabbe" style="--delay: 48s">
+
+  <div class="marker" style="--delay: 60s">~150 mio. år</div>
+  <img src="assets/svg/fisk-var-1.svg" class="creature fisk" style="--delay: 60s">
+  <img src="assets/svg/fisk-var-2.svg" class="creature fisk2" style="--delay: 60s">
+  <img src="assets/svg/fisk-var-3.svg" class="creature fisk3" style="--delay: 60s">
+
+  <div class="marker" style="--delay: 72s">~80 mio. år</div>
+  <img src="./assets/svg/nutte.svg" class="creature" style="--delay: 72s">
+  <img src="./assets/svg/nutte-puff.svg" class="creature" style="--delay: 72s">
+
+  <div class="marker" style="--delay: 84s">~50 mio. år</div>
+  <img src="./assets/svg/tuna.svg" class="creature tuna" style="--delay: 84s">
+
+  <div class="marker" style="--delay: 96s">~50 mio. år</div>
+  <img src="./assets/svg/nemo.svg" class="creature nemo" style="--delay: 96s">
+
+  <div class="marker" style="--delay: 108s">~15 mio. år</div>
+  <img src="./assets/svg/dannebrogsreje.svg" class="creature dannebrogsreje" style="--delay: 108s">
+  <img src="./assets/svg/kirugfisk.svg" class="creature" style="--delay: 108s">
+</div>
+
+<div class="sceneProgress"></div>
+<div class="timer" id="timer"></div>
+    </section>
+
+    <div class="controllers">
+      <button class="pushable">
+        <span class="front">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-play-icon lucide-play"
+          >
+            <path
+              d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"
+            />
+          </svg>
+        </span>
+      </button>
+      <button class="pushable">
+        <span class="front">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-pause-icon lucide-pause"
+          >
+            <rect x="14" y="3" width="5" height="18" rx="1" />
+            <rect x="5" y="3" width="5" height="18" rx="1" />
+          </svg>
+        </span>
+      </button>
+      <button class="pushable">
+        <span class="front">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-stop-icon lucide-stop"
+          >
+            <rect x="2" y="3" width="18" height="18" rx="1" />
+          </svg>
+        </span>
+      </button>
+      <button class="pushable">
+        <a class="front" href="./landingpage.html">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-house-icon lucide-house"
+          >
+            <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+            <path
+              d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+            />
+          </svg>
+        </a>
+      </button>
+      <!-- <button class="pushable">
+        <span class="front">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-undo2-icon lucide-undo-2"
+          >
+            <path d="M9 14 4 9l5-5" />
+            <path
+              d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"
+            />
+          </svg>
+        </span>
+      </button> -->
+    </div>
+
+    <script src="./js/timeline.js"></script>
+  </body>
+</html>

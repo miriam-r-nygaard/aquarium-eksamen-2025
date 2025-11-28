@@ -1,5 +1,12 @@
 "use strict";
+// Bekræft at DOM er klar
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM er loaded og klar");
+});
 
+/* -----------------------------------------------
+JS på maincharacters på landingpage
+-------------------------------------------------*/
 const nutte = document.getElementById("nutte");
 const vandmand = document.getElementById("vandmand");
 
@@ -27,4 +34,29 @@ if (vandmand) {
     console.log("vandmand");
     soundVandmand.play();
   });
+}
+
+/* -----------------------------------------------
+JS på knapperne på landingpage
+-------------------------------------------------*/
+/* video knap*/
+const spilBtn = document.getElementById("spilBtn");
+if (spilBtn) {
+  spilBtn.addEventListener("click", () => {
+    console.log("spilBtn virker");
+    window.location.href = "./spil.html";
+  });
+} else {
+  console.error("spilBtn ikke fundet");
+}
+
+/* video knap*/
+const videoBtn = document.getElementById("videoBtn");
+if (videoBtn) {
+  videoBtn.addEventListener("click", () => {
+    console.log("videoBtn virker");
+    window.location.href = "./video.html";
+  });
+} else {
+  console.error("videoBtn ikke fundet");
 }

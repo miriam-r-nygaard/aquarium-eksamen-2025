@@ -83,6 +83,7 @@ Knapper
   justify-content: center;
   margin-right: 4.2em;
   width: 100vw;
+  pointer-events: auto;
 }
 /* styling af knapper*/
 .optionsBtn {

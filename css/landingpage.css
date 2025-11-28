@@ -1,6 +1,10 @@
-@import url("./controllers.css");
+/* importeret skrifttype*/
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Londrina+Solid:wght@100;300;400;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+/* ---------------------------------------------------------
+Body og landingpage stil
+--------------------------------------------------------- */
+/* styling af body og baggrund*/
 body {
   margin: 0;
   min-height: 100vh;
@@ -13,7 +17,7 @@ body {
   background-repeat: no-repeat;
 }
 
-/* placere landing page elementer i midten */
+/* placere landingpage elementer i midten */
 .landing {
   display: flex;
   justify-content: unset;
@@ -26,18 +30,25 @@ body {
   flex-direction: column;
 }
 
-/* størrelse på main character */
-.mainCharacterHolder {
-  height: 75vh;
-  width: 100vw;
-}
-
+/* ---------------------------------------------------------
+tekst stil
+--------------------------------------------------------- */
 /* landing page tekst stil */
 .landing h1,
 .landing p {
   font-family: "Londrina Solid", sans-serif;
   text-align: center;
   font-size: 3rem;
+  color: black;
+}
+
+/* ---------------------------------------------------------
+Main characther (nutte og vandmand)
+--------------------------------------------------------- */
+/* størrelse på main character */
+.mainCharacterHolder {
+  height: 75vh;
+  width: 100vw;
 }
 
 /* animation til nutte og vandmand*/
@@ -54,4 +65,22 @@ body {
   50% {
     transform: translateY(-10px);
   }
+}
+
+/* ---------------------------------------------------------
+Knapper
+--------------------------------------------------------- */
+.optionsBtnHolder {
+  display: flex;
+  gap: 1vw;
+}
+.optionsBtn {
+  background-color: #72a8c5;
+  border: #579ad1 0.2em solid;
+}
+
+.optionsBtn h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  color: #ffffff;
 }

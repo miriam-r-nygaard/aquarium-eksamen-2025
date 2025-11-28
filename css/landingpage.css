@@ -92,7 +92,7 @@ Knapper
     197,
     0.3
   ); /* Genemsigtig blå baggrund, 0.3 betyder 30% synligt */
-  border: #579ad1 0.2em solid;
+  border: #adcfeb 0.2em solid;
   border-radius: 2em; /* skaber runde kanter*/
   padding: 0.8em 2em; /*afstand mellem tekst og kant*/
   min-width: 20em; /*minimum bredde, så stadigvæk læsbart*/

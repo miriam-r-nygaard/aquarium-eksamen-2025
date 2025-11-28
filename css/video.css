@@ -255,34 +255,40 @@
   cursor: pointer;
   position: absolute;
   will-change: transform;
-  animation: fisk 10s linear infinite;
-  bottom: 500px;
+  height: auto;
+  aspect-ratio: 1.6 / 1; /* bevarer billedets proportioner */
+  bottom: 30vh;
+  left: 0;
   z-index: 2;
+  animation: fisk 12s ease-in-out infinite;
+  transform-origin: center; /*her sker rotate og scale fra midten*/
 }
 
+/* Konsistente enheder (vw/vh) og flere keyframes for organisk bevægelse */
 @keyframes fisk {
   0% {
-    transform: translateX(-200px);
+    transform: translateX(-10vw) translateY(0vh) rotate(0deg);
   }
-
-  5% {
-    transform: translateX(0px);
+  12% {
+    transform: translateX(5vw) translateY(-2vh) rotate(-4deg);
   }
-
-  10% {
-    transform: translateX(100px);
+  25% {
+    transform: translateX(30vw) translateY(1.5vh) rotate(2deg);
   }
-
-  30% {
-    transform: translate(300px, 250px);
+  40% {
+    transform: translateX(50vw) translateY(-3vh) rotate(-3deg);
   }
-
-  30% {
-    transform: translate(500px, 100px);
+  55% {
+    transform: translateX(70vw) translateY(2.5vh) rotate(3deg);
   }
-
+  75% {
+    transform: translateX(90vw) translateY(-1.5vh) rotate(-2deg);
+  }
+  90% {
+    transform: translateX(105vw) translateY(1vh) rotate(1deg);
+  }
   100% {
-    transform: translateX(2000px);
+    transform: translateX(120vw) translateY(0vh) rotate(0deg);
   }
 }
 

@@ -49,6 +49,10 @@ Main characther (nutte og vandmand)
 .mainCharacterHolder {
   height: 75vh;
   width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
 }
 
 /* animation til nutte og vandmand*/
@@ -70,17 +74,42 @@ Main characther (nutte og vandmand)
 /* ---------------------------------------------------------
 Knapper
 --------------------------------------------------------- */
+/* knapper position*/
+
 .optionsBtnHolder {
+  z-index: 100;
   display: flex;
-  gap: 1vw;
+  gap: 5vw;
+  justify-content: center;
+  margin-right: 4.2em;
+  width: 100vw;
 }
+/* styling af knapper*/
 .optionsBtn {
-  background-color: #72a8c5;
+  background-color: rgba(
+    114,
+    168,
+    197,
+    0.3
+  ); /* Genemsigtig blå baggrund, 0.3 betyder 30% synligt */
   border: #579ad1 0.2em solid;
+  border-radius: 2em; /* skaber runde kanter*/
+  padding: 0.8em 2em; /*afstand mellem tekst og kant*/
+  min-width: 20em; /*minimum bredde, så stadigvæk læsbart*/
 }
 
+/* styling af tekst til knapper*/
 .optionsBtn h3 {
   font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
   color: #ffffff;
+  margin: 0; /* fjern standard margin*/
+  opacity: 1; /*sikker på at tekst er synlig*/
+}
+
+/*hover effekt på knapper*/
+.optionsBtn:hover {
+  background-color: rgba(114, 168, 197, 0.5); /* øger synlighed ved hover*/
+  transform: scale(1.05); /* let forstørrelse ved hover*/
+  transition: all0.3s ease; /* glidende overgang*/
 }

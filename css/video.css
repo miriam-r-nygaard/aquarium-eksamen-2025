@@ -128,6 +128,51 @@
 }
 
 /* ---------------------------------------------------------
+  Knapper til navigation
+--------------------------------------------------------- */
+
+/* knapper position*/
+
+.navigationBtnHolder {
+  z-index: 100;
+  display: flex;
+  gap: 2vw;
+  justify-content: center;
+  margin-right: 1em;
+  width: 100vw;
+  pointer-events: auto;
+}
+/* styling af knapper*/
+.navigationsBtn {
+  background-color: rgba(
+    114,
+    168,
+    197,
+    0.3
+  ); /* Genemsigtig blå baggrund, 0.3 betyder 30% synligt */
+  border: #adcfeb 0.2em solid;
+  border-radius: 2em; /* skaber runde kanter*/
+  padding: 0.8em 2em; /*afstand mellem tekst og kant*/
+  min-width: 20em; /*minimum bredde, så stadigvæk læsbart*/
+}
+
+/* styling af tekst til knapper*/
+.navigationsBtn h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin: 0; /* fjern standard margin*/
+  opacity: 1; /*sikker på at tekst er synlig*/
+}
+
+/*hover effekt på knapper*/
+.optionsBtn:hover {
+  background-color: rgba(114, 168, 197, 0.5); /* øger synlighed ved hover*/
+  transform: scale(1.05); /* let forstørrelse ved hover*/
+  transition: all0.3s ease; /* glidende overgang*/
+}
+
+/* ---------------------------------------------------------
   Vandmand
 --------------------------------------------------------- */
 .vandmand {

@@ -1,7 +1,34 @@
 "use strict";
+// Bekræft at DOM er klar
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM er loaded og klar");
+});
+
 /* -----------------------------------------------
-knapper
+knapper til navigation
 -------------------------------------------------*/
+/* home knap*/
+const homeBtn = document.getElementById("homeBtn");
+if (homeBtn) {
+  homeBtn.addEventListener("click", () => {
+    console.log("homeBtn virker");
+    window.location.href = "./index.html";
+  });
+} else {
+  console.error("homeBtn ikke fundet");
+}
+/* fullscreen knap*/
+const fullscreenBtn = document.getElementById("fullscreenBtn");
+if (fullscreenBtn) {
+  fullscreenBtn.addEventListener("click", () => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    } else {
+      document.documentElement.requestFullscreen();
+    }
+    console.log("fullscreenBtn virker");
+  });
+}
 
 /* -----------------------------------------------
 listerner til lyd

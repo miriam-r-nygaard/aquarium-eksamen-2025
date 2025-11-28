@@ -1,7 +1,5 @@
 // --- Trash data ---
 "use strict";
-//Intro lyd/loop der siger:: Mini helt, hjælp mig, jeg har brug for din hjælp!
-//Yes, så kører vi, det tager kun 2minutter men du redder nutte!
 
 const trashData = [
   {
@@ -26,8 +24,8 @@ const trashData = [
   },
 ];
 
-const nutte = document.getElementById('nutte');
-const livesLeft = document.getElementById('livesLeft');
+const nutte = document.getElementById("nutte");
+const livesLeft = document.getElementById("livesLeft");
 const itemsContainer = document.querySelector(".items");
 const swimmer = document.querySelector(".swimmer");
 const home = document.querySelector(".home");
@@ -39,7 +37,6 @@ let finished = false;
 let lives = 3;
 let fish;
 let sharkCooldown = false;
-
 
 // --- Smooth camera scroll setup ---
 let targetScroll = window.scrollY;
@@ -65,37 +62,6 @@ document.body.addEventListener("scroll", () => {
 
 // Get the div to display the timer
 const timerDiv = document.getElementById("timer");
-
-// Initialize the timer variables
-// let startTime;
-// let stopTime;
-
-// function startTimer() {
-//   // Start the timer when the button is clicked
-//   startTime = new Date().getTime();
-//   setInterval(updateTimer, 10);
-// }
-
-// function stopTimer() {
-//   // Stop the timer when the button is clicked
-//   clearInterval(intervalId);
-//   const elapsedTime = (new Date().getTime() - startTime) / 1000;
-//   timerDiv.innerHTML = `Elapsed time: ${elapsedTime} seconds`;
-//   //saveTime?
-//   //const name =
-//   //to localstorage here!!!!
-// }
-// let intervalId;
-// // Update the timer every 10ms
-// function updateTimer() {
-//   const currentTime = new Date().getTime();
-//   if (!startTime || !stopTime) return; // Timer not started or stopped yet
-//   const elapsedTime = currentTime - startTime;
-//   timerDiv.innerHTML = `Elapsed time: ${elapsedTime} ms`;
-// }
-
-// Start the timer when the page loads
-//document.addEventListener('DOMContentLoaded', startTimer);
 
 // Stop and restart the timer on button clicks
 const stopButton = document.getElementById("stop-button");
@@ -262,7 +228,7 @@ function finishGame() {
   msg.textContent += "\n\n🔄 Tryk for at spille igen!!";
   msg.addEventListener("click", setupGame);
   document.body.appendChild(msg);
-  
+
   const resetGameAudio = new Audio("../assets/audio/spilleigen.mp3");
   resetGameAudio.play();
 }
@@ -272,9 +238,9 @@ document.body.onpointermove = (event) => {
   if (finished) return;
 
   const { pageX, pageY, clientY } = event;
-swimmer.style.transform = `translate(${event.clientX}px, ${
-  event.clientY + window.scrollY + 50
-}px)`;
+  swimmer.style.transform = `translate(${event.clientX}px, ${
+    event.clientY + window.scrollY + 50
+  }px)`;
 
   swimmer.style.zIndex = "20";
 
@@ -292,45 +258,47 @@ swimmer.style.transform = `translate(${event.clientX}px, ${
   const trashItems = document.querySelectorAll(".trash");
 
   // --- Fish danger ---
-const fishRect = fish.getBoundingClientRect();
+  const fishRect = fish.getBoundingClientRect();
 
-if (!sharkCooldown && isColliding(swimmerRect, fishRect)) {
+  if (!sharkCooldown && isColliding(swimmerRect, fishRect)) {
+    sharkCooldown = true; // start cooldown
 
-  sharkCooldown = true;  // start cooldown
+    lives--;
+    //livesLeft.innerText=lives
+    const fartSound = new Audio("../assets/audio/fart2.mp3");
+    fartSound.play();
+    //   fartSound.addEventListener("ended", () => {
+    //     fartSound.currentTime = 0;
+    //     fartSound.play();
+    // });
 
-  lives--;
-  //livesLeft.innerText=lives
-  const fartSound = new Audio("../assets/audio/fart2.mp3");
-  fartSound.play();
-  //   fartSound.addEventListener("ended", () => {
-  //     fartSound.currentTime = 0;
-  //     fartSound.play();
-  // });
+    console.log(`🔥 Ramt af hajen! Du har ${lives} liv tilbage`);
 
-  console.log(`🔥 Ramt af hajen! Du har ${lives} liv tilbage`);
+    // Nutte animation
+    nutte.setAttribute("src", "./assets/svg/nutte-puff.svg");
+    setTimeout(() => nutte.setAttribute("src", "./assets/svg/nutte.svg"), 4000);
 
-  // Nutte animation
-  nutte.setAttribute("src","./assets/svg/nutte-puff.svg");
-  setTimeout(() => nutte.setAttribute("src","./assets/svg/nutte.svg"), 4000);
+    spawnFartBubbles();
 
-  spawnFartBubbles();
+    document.querySelector(".fart").style.opacity = "1";
+    setTimeout(
+      () => (document.querySelector(".fart").style.opacity = "0"),
+      2000
+    );
 
-  document.querySelector('.fart').style.opacity = "1";
-  setTimeout(()=>document.querySelector('.fart').style.opacity = "0", 2000);
+    // Reset shark cooldown after 5 seconds
+    setTimeout(() => {
+      sharkCooldown = false;
+      console.log("🧊 Shark cooldown ended — can take damage again");
+    }, 5000);
 
-  // Reset shark cooldown after 5 seconds
-  setTimeout(() => {
-    sharkCooldown = false;
-    console.log("🧊 Shark cooldown ended — can take damage again");
-  }, 5000);
-
-  // Optional: if lives reach 0 → restart game
-  if (lives < 0) {
-    console.log("💀 Ingen liv tilbage — spiller igen!");
-    //setupGame();
-    window.location.reload();
+    // Optional: if lives reach 0 → restart game
+    if (lives < 0) {
+      console.log("💀 Ingen liv tilbage — spiller igen!");
+      //setupGame();
+      window.location.reload();
+    }
   }
-}
 
   // --- Pick up ---
   if (!carrying) {
@@ -378,21 +346,19 @@ function playThrice(src) {
   audio.play();
 }
 
-
 // Wait for user to interact before starting the game
 document.body.addEventListener("pointermove", setupGame, { once: true });
-
 
 // prutbobler nutte
 
 function spawnFartBubbles() {
-  const fart = document.querySelector('.fart');
+  const fart = document.querySelector(".fart");
   const bubbleCount = Math.floor(Math.random() * 10) + 10; // 3-5 bobler
 
   for (let i = 0; i < bubbleCount; i++) {
     setTimeout(() => {
-      const bubble = document.createElement('div');
-      bubble.classList.add('fart-bubble');
+      const bubble = document.createElement("div");
+      bubble.classList.add("fart-bubble");
 
       // Tilfældig størrelse
       const size = Math.random() * 20 + 20; // 20px - 40px

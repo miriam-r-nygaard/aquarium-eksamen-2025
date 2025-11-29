@@ -327,7 +327,7 @@ Tang
   right: -3vw;
 }
 
-.koral3 {
+.koral3 {p
   position: absolute;
   z-index: 4;
   animation: koral2 3s ease-in-out alternate infinite;
@@ -559,49 +559,49 @@ pindesvinfisk
   0% {
     bottom: 75vh;
     right: 10vw;
-    transform: rotate(90deg);
+    transform: rotateX(90deg) rotateZ(-10deg);
   }
 
   20% {
     bottom: 50vh;
     right: 30vw;
-    transform: rotate(90deg);
+    transform: rotateX(90deg) rotateZ(-10deg);
   }
 
   50% {
     bottom: 10vh;
     right: 50vw;
-    transform: rotate(-90deg);
+    transform: rotateX(-90deg);
   }
 
   60% {
     bottom: 8vh;
     right: 40vw;
-    transform: rotate(-90deg);
+    transform: rotateX(-90deg);
   }
 
   80% {
     bottom: 50vh;
     right: 30vw;
-    transform: rotate(-120deg);
+    transform: rotateX(-120deg);
   }
 
   90% {
     bottom: 75vh;
     right: 10vw;
-    transform: rotate(-120deg);
+    transform: rotateX(-120deg);
   }
 
   95% {
     bottom: 75vh;
     right: 10vw;
-    transform: rotate(30deg);
+    transform: rotateX(30deg);
   }
 
   100% {
     bottom: 75vh;
     right: 10vw;
-    transform: rotate(90deg);
+    transform: rotateX(90deg);
   }
 }
 
@@ -791,5 +791,64 @@ Krabbe
 }
 
 /* ---------------------------------------------------------
-forsøger at gøre det nemmere at klikke på fiskene
+@media til at gøre siden responsiv
 --------------------------------------------------------- */
+
+/* Responsive scene-scaling - mobile first */
+:root {
+  --ui-scale: 1; /*standard skærmstørrelse, ingen ændring*/
+}
+
+/* først bestemmer jeg standarden for .scene */
+.scene {
+  transform-origin: top center;
+  transform: scale(var(--ui-scale));
+  /* hvis du vil centrere på store skærme: */
+  margin: 0 auto;
+  max-width: 100vw;
+}
+
+/* telefon (landskabmode)  */
+@media (max-width: 767px) and (orientation: landscape) {
+  :root {
+    --ui-scale: 1.05;
+  }
+}
+
+/* Ipad (landskabsmode) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --ui-scale: 1.12;
+  }
+  .scene {
+    max-width: 900px;
+  }
+}
+
+/* laptop */
+@media (min-width: 1024px) and (max-width: 1399px) {
+  :root {
+    --ui-scale: 1.18;
+  }
+  .scene {
+    max-width: 1200px;
+  }
+}
+
+/* stor skræm */
+@media (min-width: 1400px) {
+  :root {
+    --ui-scale: 1.25;
+  }
+  .scene {
+    max-width: 1600px;
+  }
+}
+
+/* Mulighed: finjuster enkelte elementer ved breakpoint (eksempel) */
+/* @media (min-width: 1024px) {
+   gør f.eks. forgr-sten større eller flyt den en smule på store skærme 
+  .forgr-sten { right: 4vw; scale: 1.25; }
+  .navigationBtnHolder { gap: 1.5vw; bottom: 3vh; }
+}
+*/

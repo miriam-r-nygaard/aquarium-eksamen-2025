@@ -38,12 +38,10 @@
 .bg {
   position: absolute;
   top: 5em;
-  left: 0em;
   width: 100%;
   height: 100vh;
   background-size: 100% 100%;
   background-position: center;
-  background: url("../assets/svg/fiskestime.svg");
   background-repeat: repeat-x;
   animation: animateBg 120s linear infinite;
 }
@@ -92,14 +90,14 @@
 .bg-rev-v {
   position: absolute;
   z-index: 1;
-  bottom: 0vh;
-  left: 8vw;
+  bottom: 9vh;
+  left: 3vw;
 }
 
 .bg-rev-h {
   position: absolute;
   z-index: 1;
-  bottom: 0vh;
+  bottom: 10vh;
   right: -2vw;
 }
 
@@ -130,19 +128,130 @@
 }
 
 /* ---------------------------------------------------------
+søpindsvind
+--------------------------------------------------------- */
+
+.sea-urchin {
+  position: absolute;
+  bottom: 12vh;
+  left: 0vw;
+  z-index: 4;
+  animation: seaurchinani 15s ease-in-out infinite;
+}
+
+@keyframes seaurchinani {
+  0% {
+    transform: scale(0.75) translateX(0vw) rotate(0deg);
+  }
+  50% {
+    transform: scale(0.65) translateX(2vw) rotate(10deg);
+  }
+  100% {
+    transform: scale(0.75) translateX(0vw) rotate(-5deg);
+  }
+}
+
+.sea-urchin-2 {
+  position: absolute;
+  bottom: 62vh;
+  left: 11vw;
+  z-index: 2;
+  animation: seaurchinani2 20s ease-in-out infinite;
+}
+
+@keyframes seaurchinani2 {
+  0% {
+    transform: scale(0.175) translateX(0vw) rotate(0deg);
+  }
+  50% {
+    transform: scale(0.115) translateX(3vw) rotate(20deg);
+  }
+  100% {
+    transform: scale(0.175) translateX(0vw) rotate(-5deg);
+  }
+}
+
+.sea-urchin-3 {
+  position: absolute;
+  bottom: 15vh;
+  right: -1vw;
+  z-index: 2;
+  animation: seaurchinani3 18s ease-in-out infinite;
+}
+
+@keyframes seaurchinani3 {
+  0% {
+    transform: scale(0.3) translateX(0vw) rotate(0deg);
+  }
+  50% {
+    transform: scale(0.5) translateX(2vw) rotate(-15deg);
+  }
+  100% {
+    transform: scale(0.2) translateX(0vw) rotate(5deg);
+  }
+}
+
+/* ---------------------------------------------------------
+Tang
+--------------------------------------------------------- */
+
+.tang1 {
+  position: absolute;
+  bottom: 5vh;
+  left: 20vw;
+  z-index: 4;
+  animation: tangani 15s ease-in-out infinite;
+}
+
+@keyframes tangani {
+  0% {
+    transform: scale(0.2) rotateY(180deg);
+  }
+  50% {
+    transform: scale(0.3) rotateY(175deg);
+  }
+  100% {
+    transform: scale(0.2) rotateY(180deg);
+  }
+}
+
+.tang2 {
+  position: absolute;
+  bottom: -15vh;
+  left: 40vw;
+  z-index: 4;
+  animation: tang2ani 13s ease-in-out infinite;
+}
+
+@keyframes tang2ani {
+  0% {
+    transform: scale(0.5) rotate(0deg);
+  }
+  50% {
+    transform: scale(0.6) rotate(-5deg);
+  }
+  100% {
+    transform: scale(0.5) rotate(0deg);
+  }
+}
+
+/* ---------------------------------------------------------
   Knapper til navigation
 --------------------------------------------------------- */
 
 /* knapper position*/
 
 .navigationBtnHolder {
-  z-index: 100;
+  position: absolute;
+  z-index: 100; /* sikker på at man altid knap trykke på knapperne*/
   display: flex;
   gap: 2vw;
   justify-content: center;
   margin-right: 1em;
   width: 100vw;
   pointer-events: auto;
+  bottom: 2vh; /* flytter knapperne til bunden*/
+  right: -30vw; /* flytter knapperne til højre side*/
 }
 /* styling af knapper*/
 .navigationsBtn {
@@ -336,29 +445,25 @@
   position: absolute;
   will-change: transform;
   animation: fisk-var1 20s linear infinite;
-  bottom: 500px;
+  bottom: 55vh;
   z-index: 10;
 }
 
 @keyframes fisk-var1 {
   0% {
-    transform: translateX(2000px) rotateY(180deg);
+    transform: translateX(120vw) translateY(0vh) rotateY(180deg);
   }
-
   25% {
-    transform: translate(1000px, 100px) rotateY(180deg);
+    transform: translateX(90vw) translateY(-2vh) rotateY(180deg);
   }
-
   50% {
-    transform: translateX(500px) rotateY(180deg);
+    transform: translateX(70vw) translateY(2.5vh) rotateY(180deg);
   }
-
   75% {
-    transform: translate(0px, 100px) rotateY(180deg);
+    transform: translateX(15vw) translateY(-1.5vh) rotateY(180deg);
   }
-
   100% {
-    transform: translateX(-200px) rotateY(180deg);
+    transform: translateX(-0vw) translateY(0vh) rotateY(180deg);
   }
 }
 
@@ -368,29 +473,25 @@
   position: absolute;
   will-change: transform;
   animation: fisk-var2 18s linear infinite;
-  bottom: 500px;
+  bottom: 50vh;
   z-index: 10;
 }
 
 @keyframes fisk-var2 {
   0% {
-    transform: translateX(2000px) rotateY(180deg);
+    transform: translateX(120vw) translateY(-2vh) rotateY(180deg);
   }
-
   25% {
-    transform: translate(1000px, 100px) rotateY(180deg);
+    transform: translateX(100vw) translateY(-1vh) rotateY(180deg);
   }
-
   50% {
-    transform: translateX(500px) rotateY(180deg);
+    transform: translateX(50vw) translateY(2.5vh) rotateY(180deg);
   }
-
   75% {
-    transform: translate(50px, 100px) rotateY(180deg);
+    transform: translateX(10vw) translateY(-1.5vh) rotateY(180deg);
   }
-
   100% {
-    transform: translateX(-200px) rotateY(180deg);
+    transform: translateX(-0vw) translateY(0vh) rotateY(180deg);
   }
 }
 
@@ -400,29 +501,25 @@
   position: absolute;
   will-change: transform;
   animation: fisk-var3 25s linear infinite;
-  bottom: 500px;
+  bottom: 50vh;
   z-index: 10;
 }
 
 @keyframes fisk-var3 {
   0% {
-    transform: translateX(2000px) rotateY(180deg);
+    transform: translateX(120vw) translateY(0vh) rotateY(180deg);
   }
-
   25% {
-    transform: translate(1000px, 100px) rotateY(180deg);
+    transform: translateX(90vw) translateY(-2vh) rotateY(180deg);
   }
-
   50% {
-    transform: translateX(500px) rotateY(180deg);
+    transform: translateX(70vw) translateY(2.5vh) rotateY(180deg);
   }
-
   75% {
-    transform: translate(0px, 100px) rotateY(180deg);
+    transform: translateX(15vw) translateY(-1.5vh) rotateY(180deg);
   }
-
   100% {
-    transform: translateX(-100px) rotateY(180deg);
+    transform: translateX(-0vw) translateY(0vh) rotateY(180deg);
   }
 }
 
@@ -514,32 +611,27 @@ Tun
 .tun {
   cursor: pointer;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 5vh;
+  right: -15vw;
   will-change: transform;
   animation: tun 10s infinite;
   z-index: 0;
 }
-
 @keyframes tun {
   0% {
-    transform: scale(0.5) translateX(2000px);
+    transform: translateX(10vw) translateY(0vh) scale(0.5);
   }
-
   25% {
-    transform: scale(0.5) translate(700px, 100px);
+    transform: translateX(0vw) translateY(-2vh) scale(0.5);
   }
-
   50% {
-    transform: scale(0.5) translateX(500px);
+    transform: translateX(0vw) translateY(2.5vh) scale(0.5);
   }
-
   75% {
-    transform: scale(0.5) translate(0px, 100px);
+    transform: translateX(-15vw) translateY(-1.5vh) scale(0.5);
   }
-
   100% {
-    transform: scale(0.5) translateX(-2800px);
+    transform: translateX(-120vw) translateY(0vh) scale(0.5);
   }
 }
 
@@ -553,41 +645,28 @@ nemo/ klovnfisk
   position: absolute;
   will-change: transform;
   animation: nemo 30s infinite;
-  bottom: 100px;
-  left: 30px;
+  bottom: 5vh;
+  right: 5vw;
   z-index: 4;
 }
 
 @keyframes nemo {
   0% {
-    transform: translate(1500px, 10px) rotateY(0deg);
+    transform: translateX(-0vw) translateY(0vh) rotateY(180deg);
   }
-
   25% {
-    transform: translate(1000px, 100px) rotateY(180deg);
+    transform: translateX(-15vw) translateY(-2vh) rotateY(180deg);
   }
-
-  35% {
-    transform: translate(1000px, 100px) rotateY(0deg);
-  }
-
   50% {
-    transform: translate(1500px, 100px) rotateY(180deg);
+    transform: translateX(-30vw) translateY(2.5vh) rotateY(180deg);
   }
-
-  75% {
-    transform: translate(1000px, 10px) rotateY(180deg);
+  55% {
+    transform: translateX(-30vw) translateY(2.5vh) rotateY(0deg);
   }
-
-  80% {
-    transform: translate(1000px, 10px) rotateY(0deg);
-  }
-
   100% {
-    transform: translate(1500px, 10px) rotateY(180deg);
+    transform: translateX(-0vw) translateY(0vh) rotateY(0deg);
   }
 }
-
 /* klovnfisk*/
 
 .klovnfisk {
@@ -595,38 +674,33 @@ nemo/ klovnfisk
   position: absolute;
   will-change: transform;
   animation: klovnfisk 30s infinite;
-  bottom: 100px;
-  left: 30px;
+  bottom: 3vh;
+  right: 5vw;
   z-index: 4;
 }
 
 @keyframes klovnfisk {
   0% {
-    transform: translateX(1000px) rotateY(180deg);
+    transform: translateX(-0vw) translateY(0vh) rotateY(0deg);
   }
-
   25% {
-    transform: translate(1500px, 100px) rotateY(0deg);
+    transform: translateX(-30vw) translateY(4vh) rotateY(0deg);
   }
-
   35% {
-    transform: translate(1500px, 100px) rotateY(180deg);
+    transform: translateX(-30vw) translateY(2.5vh) rotateY(180deg);
   }
-
   50% {
-    transform: translate(1000px, 100px) rotateY(0deg);
+    transform: translateX(5vw) translateY(-15vh) rotateY(180deg);
   }
-
+  55% {
+    transform: translateX(5vw) translateY(-20vh) rotateY(0deg);
+  }
   75% {
-    transform: translateX(1500px) rotateY(0deg);
+    transform: translateX(3vw) translateY(-10vh) rotateY(0deg) rotateZ(-30deg);
+    /* Klovnfisken dykker nedad med hovedet ved at ændre rotation om z-aksen*/
   }
-
-  80% {
-    transform: translateX(1500px) rotateY(180deg);
-  }
-
   100% {
-    transform: translateX(1000px) rotateY(0deg);
+    transform: translateX(0vw) translateY(0vh) rotateY(0deg);
   }
 }
 
@@ -638,69 +712,61 @@ kirugfisk
   position: absolute;
   will-change: transform;
   animation: kirugfisk 20s infinite;
-  bottom: 400px;
-  left: 30px;
+  bottom: 60vh;
+  left: -10vw;
   z-index: 2;
 }
 
 @keyframes kirugfisk {
   0% {
-    transform: translateX(-200px);
+    transform: translateX(-10vw) translateY(0vh);
   }
-
-  15% {
-    transform: translateX(0px);
+  10% {
+    transform: translateX(-1vw) translateY(0vh);
   }
-
-  30% {
-    transform: translateX(100px);
+  25% {
+    transform: translateX(5vw) translateY(0vh);
   }
-
-  60% {
-    transform: translate(300px, 100px);
+  50% {
+    transform: translateX(80vw) translateY(5vh);
   }
-
-  80% {
-    transform: translate(500px, 200px);
-  }
-
-  80% {
-    transform: translate(1000px, 200px);
-  }
-
   100% {
-    transform: translateX(2000px);
+    transform: translateX(110vw) translateY(1.5vh);
   }
 }
 
-/* Shark */
+/* ---------------------------------------------------------
+Haj
+--------------------------------------------------------- */
 
 .shark {
   position: absolute;
-  top: 200px;
-  left: -140px;
+  bottom: 20vh;
+  left: -30vw;
   z-index: 1;
   animation: sharkani 25s linear infinite;
 }
 
 @keyframes sharkani {
   0% {
-    transform: scaleY(-1) translateX(-600px) rotate(195deg);
+    transform: scaleY(-1) translateX(-30vw) rotate(195deg);
   }
   50% {
-    transform: scaleY(-1) translateX(1200px) rotate(195deg);
+    transform: scaleY(-1) translateX(50vw) rotate(195deg);
   }
   100% {
-    transform: scaleY(-1) translateX(2400px) rotate(195deg);
+    transform: scaleY(-1) translateX(130vw) rotate(195deg);
   }
 }
 
-/* Crab */
+/* ---------------------------------------------------------
+Krabbe
+--------------------------------------------------------- */
 
 .crab {
   cursor: pointer;
   position: absolute;
-  top: 800px;
+  bottom: -3vh;
   left: 250px;
   z-index: 3;
   animation: crabani 20s ease-in-out infinite;
@@ -708,141 +774,19 @@ kirugfisk
 
 @keyframes crabani {
   0% {
-    transform: translateX(-100px) rotate(0deg);
+    transform: translateX(0vw) rotate(10deg);
   }
   10% {
-    transform: translateX(200px) rotate(-0deg);
+    transform: translateX(10vw) rotate(0deg);
   }
   20% {
-    transform: translateX(100px) rotate(10deg);
+    transform: translateX(15vw) rotate(10deg);
   }
-  30% {
-    transform: translateX(200px) rotate(0deg);
-  }
-  40% {
-    transform: translateX(300px) rotate(10deg);
-  }
-  50% {
-    transform: translateX(500px) rotate(10deg);
-  }
-  60% {
-    transform: translateX(700px) rotate(0deg);
-  }
-  70% {
-    transform: translateX(800px) rotate(10deg);
-  }
-  80% {
-    transform: translateX(850px) rotate(10deg);
-  }
-  90% {
-    transform: translateX(9000px) rotate(0deg);
+  25% {
+    transform: translateX(20vw) rotate(0deg);
   }
   100% {
-    transform: translateX(2400px) rotate(0deg);
-  }
-}
-
-/* Sea Urchin */
-
-.sea-urchin {
-  position: absolute;
-  top: 350px;
-  left: 175px;
-  z-index: 4;
-  animation: seaurchinani 15s ease-in-out infinite;
-}
-
-@keyframes seaurchinani {
-  0% {
-    transform: scale(0.75) translateX(0px) rotate(0deg);
-  }
-  50% {
-    transform: scale(0.65) translateX(30px) rotate(10deg);
-  }
-  100% {
-    transform: scale(0.75) translateX(0px) rotate(-5deg);
-  }
-}
-
-.sea-urchin-2 {
-  position: absolute;
-  top: 250px;
-  left: 275px;
-  z-index: 5;
-  animation: seaurchinani2 20s ease-in-out infinite;
-}
-
-@keyframes seaurchinani2 {
-  0% {
-    transform: scale(0.175) translateX(0px) rotate(0deg);
-  }
-  50% {
-    transform: scale(0.115) translateX(40px) rotate(20deg);
-  }
-  100% {
-    transform: scale(0.175) translateX(0px) rotate(-5deg);
-  }
-}
-
-.sea-urchin-3 {
-  position: absolute;
-  top: 465px;
-  left: 270px;
-  z-index: 3;
-  animation: seaurchinani3 18s ease-in-out infinite;
-}
-
-@keyframes seaurchinani3 {
-  0% {
-    transform: scale(0.3) translateX(0px) rotate(0deg);
-  }
-  50% {
-    transform: scale(0.5) translateX(20px) rotate(-15deg);
-  }
-  100% {
-    transform: scale(0.2) translateX(0px) rotate(5deg);
-  }
-}
-
-/* Tang */
-
-.tang1 {
-  position: absolute;
-  bottom: 140px;
-  left: 1450px;
-  z-index: 4;
-  animation: tangani 15s ease-in-out infinite;
-}
-
-@keyframes tangani {
-  0% {
-    transform: scale(0.4) rotate(0deg);
-  }
-  50% {
-    transform: scale(0.5) rotate(5deg);
-  }
-  100% {
-    transform: scale(0.4) rotate(0deg);
-  }
-}
-
-.tang2 {
-  position: absolute;
-  bottom: -120px;
-  left: 700px;
-  z-index: 4;
-  animation: tang2ani 13s ease-in-out infinite;
-}
-
-@keyframes tang2ani {
-  0% {
-    transform: scale(0.5) rotate(0deg);
-  }
-  50% {
-    transform: scale(0.6) rotate(-5deg);
-  }
-  100% {
-    transform: scale(0.5) rotate(0deg);
+    transform: translateX(1000vw) rotate(0deg);
   }
 }
 

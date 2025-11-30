@@ -3,7 +3,80 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM er loaded og klar");
 });
-
+/* -----------------------------------------------
+Array med fisketyper til overlay
+-------------------------------------------------*/
+const fishInfo = [
+  {
+    className: "blæksprutte",
+    fishName: "Blæksprutte",
+    infoText:
+      "Jeg er en blæksprutte, jeg sprutter blæk, når jeg er bange og så skifter jeg farve for at gemme mig!",
+    funFact: "Fun fact: Jeg har ni hjerner, otte af dem sidder i mine arme!",
+  },
+  {
+    className: "haj",
+    fishName: "Haj",
+    infoText:
+      "Jeg er en haj, jeg har levet længere tid end dinosauerne og jeg har super skarpe tænder!",
+    funFact: "Fun Fact: Jeg har rokketænder gennem hele mit liv",
+  },
+  {
+    className: "krabbe",
+    fishName: "Krabbe",
+    infoTekst:
+      "Jeg er en krabbe, og jeg er bevis på at man kan gå sidelæns igennem livet!",
+    funFact:
+      "Fun Fact: det ligner jeg tisser ud af øjnene! det er dog bare affaldstoffer og lige under mine øjne",
+  },
+  {
+    className: "pudserFisk",
+    fishName: "pudserfisk",
+    infoTekst:
+      "Jeg er en urfisken, jeg er den første med turbofinner og uden mig var der ingen Nemo!",
+    funFact:
+      "Fun Fact: Jeg har min hel egen 'bilvask', men istedet for biler er det fisk jeg renser!",
+  },
+  {
+    className: "pindsvineFisk",
+    fishName: "Pindsvinefisk",
+    infoTekst:
+      "Jeg er en pindsvinefisk, og når jeg bliver bange, kan jeg puste mig op og blive dobbelt så stor, det er derfor andre fisk er bange for mig!",
+    funFact:
+      "Fun Fact: Mine pigge er mega giftige, jeg har gift nok til at slå 30 mennesker ihjel",
+  },
+  {
+    className: "tunFisk",
+    fishName: "Tun",
+    infoTekst:
+      "Jeg er tunnen, og jeg er en fartdjævel, jeg kan svømme hurtigere end de biler du ser i byen!",
+    funFact:
+      "Fun Fact: Jeg kan blive op til 4 meter lang, det er længere end hvis end to voksne mennekser som står på hinandens skuldre!",
+  },
+  {
+    className: "KlovnFisk",
+    fishName: "Klovnfisk",
+    infoTekst:
+      "Jeg er en klovnfisk, jeg lever i søanemoner, fordi jeg ikke bliver brændt af dem, modsat andre fisk!",
+    funFact:
+      " Fun Fact: Jeg hjælper søanemonerne med at lokke andre fisk til, som bliver til søanemonens mad!",
+  },
+  {
+    className: "kirugFisk",
+    fishName: "Kirugfisk",
+    infoTekst:
+      "jeg er en kirugfisk, og der findes 75 forskellige arter af mig!",
+    funFact:
+      "Fun Fact: Min skapel, der sidder ved min hale, er lige så skrap som en kniv!",
+  },
+  {
+    className: "ræveFjæs",
+    fishName: "Rævefjæs",
+    infoTekst: "Jeg er en variant af kirugfisken!",
+    funFact:
+      "Fun Fact: Jeg er vegetar og forskrækker du mig bliver jeg kedelig i farven!",
+  },
+];
 /* -----------------------------------------------
 knapper til navigation
 -------------------------------------------------*/

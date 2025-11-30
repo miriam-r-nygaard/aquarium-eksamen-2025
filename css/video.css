@@ -1,9 +1,7 @@
 /* ---------------------------------------------------------
    Root-variabler
-   - px: billedstørrelser, offsets
-   - farver + font
+   - farver
 --------------------------------------------------------- */
-@import url("./controllers.css");
 
 :root {
   /* Farver */
@@ -30,6 +28,54 @@
   width: 100vw;
   overflow: hidden;
   background: linear-gradient(var(--ocean-top), var(--ocean-bottom));
+}
+
+/* ---------------------------------------------------------
+  Knapper til navigation
+--------------------------------------------------------- */
+
+/* knapper position*/
+
+.navigationBtnHolder {
+  position: absolute;
+  z-index: 100; /* sikker på at man altid knap trykke på knapperne*/
+  display: flex;
+  gap: 2vw;
+  justify-content: center;
+  margin-right: 1em;
+  width: 100vw;
+  pointer-events: auto;
+  bottom: 2vh; /* flytter knapperne til bunden*/
+  right: -40vw; /* flytter knapperne til højre side*/
+}
+/* styling af knapper*/
+.navigationsBtn {
+  background-color: rgba(
+    114,
+    168,
+    197,
+    0.3
+  ); /* Genemsigtig blå baggrund, 0.3 betyder 30% synligt */
+  border: #adcfeb 0.2em solid;
+  border-radius: 2em; /* skaber runde kanter*/
+  padding: 0.8em 2em; /*afstand mellem tekst og kant*/
+  min-width: 10em; /*minimum bredde, så stadigvæk læsbart*/
+}
+
+/* styling af tekst til knapper*/
+.navigationsBtn h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin: 0; /* fjern standard margin*/
+  opacity: 1; /*sikker på at tekst er synlig*/
+}
+
+/*hover effekt på knapper*/
+.optionsBtn:hover {
+  background-color: rgba(114, 168, 197, 0.5); /* øger synlighed ved hover*/
+  transform: scale(1.05); /* let forstørrelse ved hover*/
+  transition: all0.3s ease; /* glidende overgang*/
 }
 
 /* ---------------------------------------------------------
@@ -236,75 +282,28 @@ Tang
 }
 
 /* ---------------------------------------------------------
-  Knapper til navigation
+  blæksprutte
 --------------------------------------------------------- */
-
-/* knapper position*/
-
-.navigationBtnHolder {
-  position: absolute;
-  z-index: 100; /* sikker på at man altid knap trykke på knapperne*/
-  display: flex;
-  gap: 2vw;
-  justify-content: center;
-  margin-right: 1em;
-  width: 100vw;
-  pointer-events: auto;
-  bottom: 2vh; /* flytter knapperne til bunden*/
-  right: -30vw; /* flytter knapperne til højre side*/
-}
-/* styling af knapper*/
-.navigationsBtn {
-  background-color: rgba(
-    114,
-    168,
-    197,
-    0.3
-  ); /* Genemsigtig blå baggrund, 0.3 betyder 30% synligt */
-  border: #adcfeb 0.2em solid;
-  border-radius: 2em; /* skaber runde kanter*/
-  padding: 0.8em 2em; /*afstand mellem tekst og kant*/
-  min-width: 20em; /*minimum bredde, så stadigvæk læsbart*/
-}
-
-/* styling af tekst til knapper*/
-.navigationsBtn h3 {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.5rem;
-  color: #ffffff;
-  margin: 0; /* fjern standard margin*/
-  opacity: 1; /*sikker på at tekst er synlig*/
-}
-
-/*hover effekt på knapper*/
-.optionsBtn:hover {
-  background-color: rgba(114, 168, 197, 0.5); /* øger synlighed ved hover*/
-  transform: scale(1.05); /* let forstørrelse ved hover*/
-  transition: all0.3s ease; /* glidende overgang*/
-}
-
-/* ---------------------------------------------------------
-  Vandmand
---------------------------------------------------------- */
-.vandmand {
+.octopus {
   position: absolute;
   z-index: 10;
-  animation: vandmand 2s infinite;
+  animation: octopusani 2s infinite;
+  bottom: 60vh;
 }
 
-@keyframes vandmand {
+@keyframes octopusani {
   from,
   to {
-    transform: scale(0.5, 0.5);
+    transform: scale(0.8, 0.8);
   }
   25% {
-    transform: scale(0.4, 0.6);
+    transform: scale(0.75, 0.8);
   }
   50% {
-    transform: scale(0.6, 0.4);
+    transform: scale(0.8, 0.75);
   }
   75% {
-    transform: scale(0.4, 0.5);
+    transform: scale(0.75, 0.8);
   }
 }
 
@@ -327,12 +326,12 @@ Tang
   right: -3vw;
 }
 
-.koral3 {p
+.koral3 {
   position: absolute;
   z-index: 4;
   animation: koral2 3s ease-in-out alternate infinite;
-  bottom: 50px;
-  left: 500px;
+  bottom: 7vh;
+  left: 30vw;
 }
 
 @keyframes koral {
@@ -559,49 +558,49 @@ pindesvinfisk
   0% {
     bottom: 75vh;
     right: 10vw;
-    transform: rotateX(90deg) rotateZ(-10deg);
+    transform: rotate(90deg) rotateZ(-10deg);
   }
 
   20% {
     bottom: 50vh;
     right: 30vw;
-    transform: rotateX(90deg) rotateZ(-10deg);
+    transform: rotate(90deg) rotateZ(-10deg);
   }
 
   50% {
     bottom: 10vh;
     right: 50vw;
-    transform: rotateX(-90deg);
+    transform: rotate(-90deg);
   }
 
   60% {
     bottom: 8vh;
     right: 40vw;
-    transform: rotateX(-90deg);
+    transform: rotate(-90deg);
   }
 
   80% {
     bottom: 50vh;
     right: 30vw;
-    transform: rotateX(-120deg);
+    transform: rotate(-120deg);
   }
 
   90% {
     bottom: 75vh;
     right: 10vw;
-    transform: rotateX(-120deg);
+    transform: rotate(-120deg);
   }
 
   95% {
     bottom: 75vh;
     right: 10vw;
-    transform: rotateX(30deg);
+    transform: rotate(30deg);
   }
 
   100% {
     bottom: 75vh;
     right: 10vw;
-    transform: rotateX(90deg);
+    transform: rotate(90deg);
   }
 }
 
@@ -619,19 +618,19 @@ Tun
 }
 @keyframes tun {
   0% {
-    transform: translateX(10vw) translateY(0vh) scale(0.5);
+    transform: translateX(10vw) translateY(0vh) scale(0.8);
   }
   25% {
-    transform: translateX(0vw) translateY(-2vh) scale(0.5);
+    transform: translateX(0vw) translateY(-2vh) scale(0.8);
   }
   50% {
-    transform: translateX(0vw) translateY(2.5vh) scale(0.5);
+    transform: translateX(0vw) translateY(2.5vh) scale(0.8);
   }
   75% {
-    transform: translateX(-15vw) translateY(-1.5vh) scale(0.5);
+    transform: translateX(-15vw) translateY(-1.5vh) scale(0.8);
   }
   100% {
-    transform: translateX(-120vw) translateY(0vh) scale(0.5);
+    transform: translateX(-120vw) translateY(0vh) scale(0.8);
   }
 }
 
@@ -767,7 +766,7 @@ Krabbe
   cursor: pointer;
   position: absolute;
   bottom: -3vh;
-  left: 250px;
+  left: 0vw;
   z-index: 3;
   animation: crabani 20s ease-in-out infinite;
 }
@@ -789,66 +788,3 @@ Krabbe
     transform: translateX(1000vw) rotate(0deg);
   }
 }
-
-/* ---------------------------------------------------------
-@media til at gøre siden responsiv
---------------------------------------------------------- */
-
-/* Responsive scene-scaling - mobile first */
-:root {
-  --ui-scale: 1; /*standard skærmstørrelse, ingen ændring*/
-}
-
-/* først bestemmer jeg standarden for .scene */
-.scene {
-  transform-origin: top center;
-  transform: scale(var(--ui-scale));
-  /* hvis du vil centrere på store skærme: */
-  margin: 0 auto;
-  max-width: 100vw;
-}
-
-/* telefon (landskabmode)  */
-@media (max-width: 767px) and (orientation: landscape) {
-  :root {
-    --ui-scale: 1.05;
-  }
-}
-
-/* Ipad (landskabsmode) */
-@media (min-width: 768px) and (max-width: 1023px) {
-  :root {
-    --ui-scale: 1.12;
-  }
-  .scene {
-    max-width: 900px;
-  }
-}
-
-/* laptop */
-@media (min-width: 1024px) and (max-width: 1399px) {
-  :root {
-    --ui-scale: 1.18;
-  }
-  .scene {
-    max-width: 1200px;
-  }
-}
-
-/* stor skræm */
-@media (min-width: 1400px) {
-  :root {
-    --ui-scale: 1.25;
-  }
-  .scene {
-    max-width: 1600px;
-  }
-}
-
-/* Mulighed: finjuster enkelte elementer ved breakpoint (eksempel) */
-/* @media (min-width: 1024px) {
-   gør f.eks. forgr-sten større eller flyt den en smule på store skærme 
-  .forgr-sten { right: 4vw; scale: 1.25; }
-  .navigationBtnHolder { gap: 1.5vw; bottom: 3vh; }
-}
-*/

@@ -8,9 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
 JS på maincharacters på landingpage
 -------------------------------------------------*/
 const nutte = document.getElementById("nutte");
-const vandmand = document.getElementById("vandmand");
+const octopus = document.getElementById("octopus");
 
 let nutteState = "normal";
+let octopusState = "normal";
 
 if (nutte) {
   nutte.addEventListener("click", () => {
@@ -28,11 +29,19 @@ if (nutte) {
   });
 }
 
-if (vandmand) {
-  const soundVandmand = new Audio("./assets/audio/sevideooglaer.mp3");
-  vandmand.addEventListener("click", () => {
-    console.log("vandmand");
-    soundVandmand.play();
+if (octopus) {
+  octopus.addEventListener("click", () => {
+    const soundOctopus = new Audio("./assets/audio/sevideooglaer.mp3");
+    //Toggle mellem brun og blå blæksprutte
+    if (octopusState === "normal") {
+      octopus.setAttribute("src", "./assets/svg/octopus-blue.svg");
+      octopusState = "blue";
+    } else {
+      octopus.setAttribute("src", "./assets/svg/octopus-brown.svg");
+      octopusState = "normal";
+    }
+    console.log("blæksprutte virker", octopusState);
+    soundOctopus.play();
   });
 }
 

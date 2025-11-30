@@ -38,24 +38,32 @@ tekst stil
 .landing p {
   font-family: "Londrina Solid", sans-serif;
   text-align: center;
-  font-size: 3rem;
   color: black;
+  margin: 0.2em;
+}
+
+.landing h1 {
+  font-size: 3em;
+}
+
+.landing p {
+  font-size: 2em;
 }
 
 /* ---------------------------------------------------------
-Main characther (nutte og vandmand)
+Main characther (nutte og blæksprutte)
 --------------------------------------------------------- */
 /* størrelse på main character */
-.mainCharacterHolder {
-  height: 75vh;
+.mainCharacterHoldet {
+  height: 40vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5vw;
+  margin-left: 8vw;
 }
 
-/* animation til nutte og vandmand*/
+/* animation til nutte og blæksprutte*/
 .mainCharacterHoldet {
   animation: float 4s ease-in-out infinite;
 }
@@ -70,7 +78,19 @@ Main characther (nutte og vandmand)
     transform: translateY(-10px);
   }
 }
+/* ---------------------------------------------------------
+blæksprutte
+--------------------------------------------------------- */
+.octopusWrapper {
+  transform: scale(0.8) rotateY(180deg);
+}
 
+/* ---------------------------------------------------------
+nutte
+--------------------------------------------------------- */
+.nutteWrapper {
+  transform: scale(0.8);
+}
 /* ---------------------------------------------------------
 Knapper
 --------------------------------------------------------- */
@@ -79,11 +99,11 @@ Knapper
 .optionsBtnHolder {
   z-index: 100;
   display: flex;
-  gap: 5vw;
+  gap: 8vw;
   justify-content: center;
-  margin-right: 4.2em;
   width: 100vw;
   pointer-events: auto;
+  bottom: 5vh;
 }
 /* styling af knapper*/
 .optionsBtn {

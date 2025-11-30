@@ -35,8 +35,8 @@ listerner til lyd
 -------------------------------------------------*/
 //henter fiskene
 
-//vandmand
-const vandmandFisk = document.getElementById("vandMand");
+//blæksprutte
+const blæksprutteFisk = document.getElementById("blæksprutte");
 //haj
 const hajFisk = document.getElementById("haj");
 //krabbe
@@ -61,9 +61,9 @@ const rævefjæsFisk = document.getElementById("ræveFjæs1");
 const rævefjæsFisk2 = document.getElementById("ræveFjæs2");
 
 //opretter lydobjekter
-//Vandmand
-const soundVandmandFisk = new Audio();
-soundVandmandFisk.src = "./assets/audio/jegervandmand.mp3";
+//Blæksprutte
+const soundBlæksprutteFisk = new Audio();
+soundBlæksprutteFisk.src = "./assets/audio/jegervandmand.mp3";
 //Haj
 const soundHajFisk = new Audio();
 soundHajFisk.src = "./assets/audio/jegerenhaj.mp3";
@@ -105,10 +105,10 @@ const soundRævefjæsFisk2 = new Audio();
 soundRævefjæsFisk2.src = "./assets/audio/jegerenkirugfisk.mp3";
 
 //sætter lyttere på så den afspiller ved klick
-//vandmand
-if (vandmandFisk) {
-  vandmandFisk.addEventListener("click", () => {
-    soundVandmandFisk.play();
+//blæksprutte
+if (blæksprutteFisk) {
+  blæksprutteFisk.addEventListener("click", () => {
+    soundBlæksprutteFisk.play();
   });
 }
 //haj

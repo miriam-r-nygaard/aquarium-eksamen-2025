@@ -108,7 +108,7 @@ overlay info boks
 tekst stil
 --------------------------------------------------------- */
 /* overlay tekst */
-.fiskType h2 {
+.fiskType {
   font-family: "Londrina Solid", sans-serif;
   text-align: center;
   color: black;
@@ -116,12 +116,12 @@ tekst stil
   font-size: 2.5em;
 }
 
-.fiskInfo p {
+.fiskInfo {
   font-size: 1em;
   font-family: "playfair display", serif;
   color: black;
 }
-.SjovViden p {
+.sjovViden {
   font-size: 1em;
   font-family: "playfair display", serif;
   font-style: italic;

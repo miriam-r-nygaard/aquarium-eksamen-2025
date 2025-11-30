@@ -23,7 +23,7 @@ const fishInfo = [
   {
     className: "krabbe",
     fishName: "Krabbe",
-    infoTexst:
+    infoText:
       "Jeg er en krabbe, og jeg er bevis på at man kan gå sidelæns igennem livet!",
     funFact:
       "Fun Fact: det ligner jeg tisser ud af øjnene! det er dog bare affaldstoffer og lige under mine øjne",
@@ -32,7 +32,7 @@ const fishInfo = [
   {
     className: "pudserFisk",
     fishName: "pudserfisk",
-    infoTexst:
+    infoText:
       "Jeg er en urfisken, jeg er den første med turbofinner og uden mig var der ingen Nemo!",
     funFact:
       "Fun Fact: Jeg har min hel egen 'bilvask', men istedet for biler er det fisk jeg renser!",
@@ -41,7 +41,7 @@ const fishInfo = [
   {
     className: "pindsvineFisk",
     fishName: "Pindsvinefisk",
-    infoTexst:
+    infoText:
       "Jeg er en pindsvinefisk, og når jeg bliver bange, kan jeg puste mig op og blive dobbelt så stor, det er derfor andre fisk er bange for mig!",
     funFact:
       "Fun Fact: Mine pigge er mega giftige, jeg har gift nok til at slå 30 mennesker ihjel",
@@ -50,7 +50,7 @@ const fishInfo = [
   {
     className: "tunFisk",
     fishName: "Tun",
-    infoTexst:
+    infoText:
       "Jeg er tunnen, og jeg er en fartdjævel, jeg kan svømme hurtigere end de biler du ser i byen!",
     funFact:
       "Fun Fact: Jeg kan blive op til 4 meter lang, det er længere end hvis end to voksne mennekser som står på hinandens skuldre!",
@@ -59,7 +59,7 @@ const fishInfo = [
   {
     className: "KlovnFisk",
     fishName: "Klovnfisk",
-    infoTexst:
+    infoText:
       "Jeg er en klovnfisk, jeg lever i søanemoner, fordi jeg ikke bliver brændt af dem, modsat andre fisk!",
     funFact:
       " Fun Fact: Jeg hjælper søanemonerne med at lokke andre fisk til, som bliver til søanemonens mad!",
@@ -68,8 +68,7 @@ const fishInfo = [
   {
     className: "kirugFisk",
     fishName: "Kirugfisk",
-    infoTexst:
-      "jeg er en kirugfisk, og der findes 75 forskellige arter af mig!",
+    infoText: "jeg er en kirugfisk, og der findes 75 forskellige arter af mig!",
     funFact:
       "Fun Fact: Min skapel, der sidder ved min hale, er lige så skrap som en kniv!",
     image: "./assets/svg/kirugfisk.svg",
@@ -77,7 +76,7 @@ const fishInfo = [
   {
     className: "ræveFjæs",
     fishName: "Rævefjæs",
-    infoTexst: "Jeg er en variant af kirugfisken!",
+    infoText: "Jeg er en variant af kirugfisken!",
     funFact:
       "Fun Fact: Jeg er vegetar og forskrækker du mig bliver jeg kedelig i farven!",
     image: "./assets/svg/fisk.svg",
@@ -93,19 +92,19 @@ document.addEventListener("DOMContentLoaded", function () {
 /* -----------------------------------------------
 info overlay til fiskene
 -------------------------------------------------*/
-function showFishInfo(className) {
-  console.log("Nemo er fundet", className);
+function showFishInfo(fishData) {
+  console.log("Nemo er fundet", fishData.fishName);
   const infoBoks = document.getElementById("infoBoks");
   //Nu laver jeg HTML inholdet til infoboksene
   infoBoks.innerHTML = `
   <div class="info-content">
-  <h2 class="fiskType">${className.fishName}</h2>
-  <p class="fiskInfo">${className.infoTexst}</p>
-  <p class="sjovViden">${className.funFact}</p>
+  <h2 class="fiskType">${fishData.fishName}</h2>
+  <p class="fiskInfo">${fishData.infoText}</p>
+  <p class="sjovViden">${fishData.funFact}</p>
   </div>
   <div class="bobbleAndImg">
-  <img scr="./assets/svg/boble.svg" alt="boble" class="bobble"/>
-  <img scr="${className.image}" alt="${className.fishName}" class="fishImage"/>
+  <img src="./assets/svg/boble.svg" alt="boble" class="bobble"/>
+  <img src="${fishData.image}" alt="${fishData.fishName}" class="fishImage"/>
   </div>
   `;
   //viser infoboksen
@@ -116,6 +115,24 @@ function showFishInfo(className) {
     openOverlay.classList.remove("active");
   }, 6000);
 }
+/* -----------------------------------------------
+tilføjer klik lyttere til alle fiskene
+-------------------------------------------------*/
+fishInfo.forEach((fish) => {
+  //find HTML elementet for denne fisk
+  const fishElement = document.getElementById(fish.className);
+  if (fishElement) {
+    //click-event til fisk elementet
+    fishElement.addEventListener("click", () => {
+      console.log("klikket på", fish.fishName);
+      //vis info overlay med fiskens data
+      showFishInfo(fish);
+    });
+  } else {
+    console.error("Element for fisk ikke fundet:", fish.className);
+  }
+});
+
 /* -----------------------------------------------
 knapper til navigation
 -------------------------------------------------*/

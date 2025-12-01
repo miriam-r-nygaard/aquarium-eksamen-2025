@@ -83,10 +83,14 @@ overlay info boks
 --------------------------------------------------------- */
 .overlay {
   position: absolute;
-  top: 0;
+  top: 0.5em;
+  right: 30vw;
+  max-width: 50em;
+  max-height: 20em;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start; /*placere elementer i starten af af containeren*/
   padding: 2em 4em;
   background-color: var(--ocean-top);
   border: 0.3em solid var(--ocean-bottom);
@@ -98,7 +102,9 @@ overlay info boks
   pointer-events: none;
   /* så den ikke fanger musen, når du kører hen over den*/
   z-index: 100;
+  gap: 2em;
 }
+
 .overlay.active {
   opacity: 1;
   transform: translateY(0);
@@ -108,24 +114,77 @@ overlay info boks
 tekst stil
 --------------------------------------------------------- */
 /* overlay tekst */
+.infoContent {
+  flex: 1;
+  max-width: 20em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
 .fiskType {
   font-family: "Londrina Solid", sans-serif;
-  text-align: center;
+  text-align: left;
   color: black;
-  margin: 0.2em;
+  margin: 0;
   font-size: 2.5em;
+  line-height: 1.5;
 }
-
 .fiskInfo {
   font-size: 1em;
   font-family: "playfair display", serif;
   color: black;
+  line-height: 1.5;
 }
 .sjovViden {
   font-size: 1em;
   font-family: "playfair display", serif;
   font-style: italic;
   color: black;
+  padding-top: 0.5em;
+}
+/* ---------------------------------------------------------
+billeder i overlay
+--------------------------------------------------------- */
+.bobleAndImg {
+  position: relative;
+  width: 15em;
+  height: 15em;
+  margin-right: -1em;
+  align-self: flex-end; /* slå dette op*/
+  animation: float 4s ease-in-out infinite;
+}
+/* jeg giver boblen samme animation som landingpagen*/
+/* Keyframes for mild floating animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.boble {
+  position: absolute;
+  width: 15em;
+  height: 15em;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+.fishImage {
+  position: absolute;
+  width: 65%;
+  height: auto;
+  max-height: 70%;
+  object-fit: contain;
+  bottom: 25%;
+  right: 20%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ---------------------------------------------------------

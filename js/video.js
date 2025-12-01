@@ -131,7 +131,7 @@ function showFishInfo(html) {
     //fjerner overlay efter 6 sekunder
     setTimeout(() => {
       infoBoks.classList.remove("active");
-    }, 6000);
+    }, 20000);
   }
 }
 /* -----------------------------------------------
@@ -149,13 +149,13 @@ fishInfo.forEach((fish) => {
         sound.play();
       }
       const fishDetails = `
-  <div class="info-content">
+  <div class="infoContent">
     <h2 class="fiskType">${fish.fishName}</h2>
     <p class="fiskInfo">${fish.infoText}</p>
     <p class="sjovViden">${fish.funFact}</p>
   </div>
-  <div class="bobbleAndImg">
-  <img src="./assets/svg/boble.svg" alt="boble" class="bobble"/>
+  <div class="bobleAndImg">
+  <img src="./assets/svg/boble.svg" alt="boble" class="boble"/>
   <img src="${fish.image}" alt="${fish.fishName}" class="fishImage"/>
   </div>
   `;
@@ -206,7 +206,7 @@ if (nuttePrutteContainer) {
     //gå tilbage til normal efter 6 sekunder
     setTimeout(() => {
       nuttePrutteContainer.classList.remove("active");
-    }, 6000);
+    }, 10000);
   });
 }
 
@@ -219,6 +219,6 @@ if (sprutteTrutteContainer) {
     //gå tilbage til normal efter 6 sekunder
     setTimeout(() => {
       sprutteTrutteContainer.classList.remove("active");
-    }, 6000);
+    }, 10000);
   });
 }

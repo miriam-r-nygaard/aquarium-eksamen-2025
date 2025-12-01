@@ -330,33 +330,6 @@ Tang
     transform: scale(0.5) rotate(0deg);
   }
 }
-
-/* ---------------------------------------------------------
-  blæksprutte
---------------------------------------------------------- */
-#blæksprutte {
-  position: absolute;
-  z-index: 10;
-  animation: octopusani 2s infinite;
-  bottom: 60vh;
-}
-
-@keyframes octopusani {
-  from,
-  to {
-    transform: scale(0.8, 0.8);
-  }
-  25% {
-    transform: scale(0.75, 0.8);
-  }
-  50% {
-    transform: scale(0.8, 0.75);
-  }
-  75% {
-    transform: scale(0.75, 0.8);
-  }
-}
-
 /* ---------------------------------------------------------
  koraller
 --------------------------------------------------------- */
@@ -399,6 +372,51 @@ Tang
   }
   to {
     transform: scale(0.4);
+  }
+}
+/* ---------------------------------------------------------
+  blæksprutte (toggler)
+--------------------------------------------------------- */
+/*Standard*/
+.sprutteTrutte .octopusNormal {
+  position: absolute;
+  z-index: 10;
+  opacity: 1;
+  animation: octopusani 2s infinite;
+  bottom: 60vh;
+}
+
+/*Bange*/
+.sprutteTrutte .octopusBange {
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+  animation: octopusani 2s infinite;
+  bottom: 60vh;
+}
+
+/* Aktiv tilstand */
+.sprutteTrutte.active .octopusNormal {
+  opacity: 0;
+}
+
+.sprutteTrutte.active .octopusBange {
+  opacity: 1;
+}
+
+@keyframes octopusani {
+  from,
+  to {
+    transform: scale(0.8, 0.8);
+  }
+  25% {
+    transform: scale(0.75, 0.8);
+  }
+  50% {
+    transform: scale(0.8, 0.75);
+  }
+  75% {
+    transform: scale(0.75, 0.8);
   }
 }
 
@@ -486,7 +504,7 @@ Tang
 }
 
 /* ---------------------------------------------------------
-  pudser-fisk
+  pudserfisk
 --------------------------------------------------------- */
 /* variant 1*/
 #pudserFisk1 {
@@ -577,7 +595,7 @@ pindesvinfisk
 --------------------------------------------------------- */
 /*standard*/
 
-.nutte-prutte #pindsvieFisk {
+.nuttePrutte .pufferFishNormal {
   cursor: pointer;
   position: absolute;
   z-index: 10;
@@ -586,7 +604,7 @@ pindesvinfisk
   animation: nutteani 20s ease-in-out infinite;
 }
 
-.nutte-prutte #bange-pindsvineFisk {
+.nuttePrutte .pufferFishBange {
   cursor: pointer;
   position: absolute;
   z-index: 10;
@@ -595,12 +613,12 @@ pindesvinfisk
   animation: nutteani 20s ease-in-out infinite;
 }
 
-/* Aktiv tilstand - normal fisk skjult, bange fisk synlig */
-.nutte-prutte.active #pindsvineFisk {
+/* Aktiv tilstand */
+.nuttePrutte.active .pufferFishNormal {
   opacity: 0;
 }
 
-.nutte-prutte.active #bange-pindsvieFisk {
+.nuttePrutte.active .pufferFishBange {
   opacity: 1;
 }
 

@@ -5,7 +5,7 @@ Array med fisketyper til overlay
 -------------------------------------------------*/
 const fishInfo = [
   {
-    className: "octopus",
+    className: "sprutteTrutte",
     fishName: "Blæksprutte",
     infoText:
       "Jeg er en blæksprutte, jeg sprutter blæk, når jeg er bange og så skifter jeg farve for at gemme mig!",
@@ -39,7 +39,7 @@ const fishInfo = [
     image: "./assets/svg/fisk-var-1.svg",
   },
   {
-    className: "pufferFish",
+    className: "nuttePrutte",
     fishName: "Pindsvinefisk",
     infoText:
       "Jeg er en pindsvinefisk, og når jeg bliver bange, kan jeg puste mig op og blive dobbelt så stor, det er derfor andre fisk er bange for mig!",
@@ -89,7 +89,7 @@ alle lydobjekter defineres her nu er de i én
 const fishSound = {
   //opretter lydobjekter
   //Blæksprutte
-  octopus: new Audio("./assets/audio/jegervandmand.mp3"),
+  sprutteTrutte: new Audio("./assets/audio/jegervandmand.mp3"),
   //Haj
   shark: new Audio("./assets/audio/jegerenhaj.mp3"),
   //Krabbe
@@ -97,7 +97,7 @@ const fishSound = {
   //Pudserfisk
   cleanerFish: new Audio("./assets/audio/jegerenurfisk.mp3"),
   //Pindsvinefisk
-  pufferFish: new Audio("./assets/audio/jegerenpindsvinefisk.mp3"),
+  nuttePrutte: new Audio("./assets/audio/jegerenpindsvinefisk.mp3"),
   //Tun
   tuna: new Audio("./assets/audio/jegerentun.mp3"),
   //klovnfisk
@@ -187,5 +187,38 @@ if (fullscreenBtn) {
       document.documentElement.requestFullscreen();
     }
     console.log("fullscreenBtn virker");
+  });
+}
+
+/* -----------------------------------------------
+karaktere der toggler
+-------------------------------------------------*/
+//nutte
+const nuttePrutteContainer = document.querySelector(".nuttePrutte");
+//sprutte
+const sprutteTrutteContainer = document.querySelector(".sprutteTrutte");
+//pindsvinefisk
+if (nuttePrutteContainer) {
+  nuttePrutteContainer.addEventListener("click", () => {
+    console.log("Nutte er fundet");
+    //toggler mellem normal og bange tilstand
+    nuttePrutteContainer.classList.toggle("active");
+    //gå tilbage til normal efter 6 sekunder
+    setTimeout(() => {
+      nuttePrutteContainer.classList.remove("active");
+    }, 6000);
+  });
+}
+
+//blæksprutte
+if (sprutteTrutteContainer) {
+  sprutteTrutteContainer.addEventListener("click", () => {
+    console.log("Sprutte er fundet");
+    //toggler mellem normal og bange tilstand
+    sprutteTrutteContainer.classList.toggle("active");
+    //gå tilbage til normal efter 6 sekunder
+    setTimeout(() => {
+      sprutteTrutteContainer.classList.remove("active");
+    }, 6000);
   });
 }

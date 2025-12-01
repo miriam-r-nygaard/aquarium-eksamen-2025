@@ -82,6 +82,32 @@ const fishInfo = [
     image: "./assets/svg/fisk.svg",
   },
 ];
+
+/* -----------------------------------------------
+alle lydobjekter defineres her nu er de i én
+-------------------------------------------------*/
+const fishSound = {
+  //opretter lydobjekter
+  //Blæksprutte
+  octopus: new Audio("./assets/audio/jegervandmand.mp3"),
+  //Haj
+  shark: new Audio("./assets/audio/jegerenhaj.mp3"),
+  //Krabbe
+  crab: new Audio("./assets/audio/jegerenkrabbe.mp3"),
+  //Pudserfisk
+  cleanerFish: new Audio("./assets/audio/jegerenurfisk.mp3"),
+  //Pindsvinefisk
+  pufferFish: new Audio("./assets/audio/jegerenpindsvinefisk.mp3"),
+  //Tun
+  tuna: new Audio("./assets/audio/jegerentun.mp3"),
+  //klovnfisk
+  clownFish: new Audio("./assets/audio/jegerenklovnfisk.mp3"),
+  //Kirugfisk
+  doctorFish: new Audio("./assets/audio/jegerenkirugfisk.mp3"),
+  //Rævefjæs
+  foxFace: new Audio("./assets/audio/jegerenkirugfisk.mp3"),
+};
+
 /* -----------------------------------------------
 venter med at kører JS indtil HTML er loadet helt
 -------------------------------------------------*/
@@ -89,50 +115,55 @@ venter med at kører JS indtil HTML er loadet helt
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM er loaded og klar");
 });
+
 /* -----------------------------------------------
 info overlay til fiskene
 -------------------------------------------------*/
-function showFishInfo(fishData) {
-  console.log("Nemo er fundet", fishData.fishName);
-  const infoBoks = document.getElementById("infoBoks");
-  //Nu laver jeg HTML inholdet til infoboksene
-  infoBoks.innerHTML = `
-  <div class="info-content">
-  <h2 class="fiskType">${fishData.fishName}</h2>
-  <p class="fiskInfo">${fishData.infoText}</p>
-  <p class="sjovViden">${fishData.funFact}</p>
-  </div>
-  <div class="bobbleAndImg">
-  <img src="./assets/svg/boble.svg" alt="boble" class="bobble"/>
-  <img src="${fishData.image}" alt="${fishData.fishName}" class="fishImage"/>
-  </div>
-  `;
-  //viser infoboksen
-  const openOverlay = document.querySelector(".overlay");
-  openOverlay.classList.add("active");
-  //lukker infoboksen efter 6 sekunder
-  setTimeout(() => {
-    openOverlay.classList.remove("active");
-  }, 6000);
+//finder overlay i HTML
+const infoBoks = document.getElementById("infoBoks");
+//denne funktion viser overlay med fiske-info
+function showFishInfo(html) {
+  if (infoBoks) {
+    infoBoks.innerHTML = html;
+    // nu er overlay synligt gennem css klassen
+    infoBoks.classList.add("active");
+
+    //fjerner overlay efter 6 sekunder
+    setTimeout(() => {
+      infoBoks.classList.remove("active");
+    }, 6000);
+  }
 }
 /* -----------------------------------------------
 tilføjer klik lyttere til alle fiskene
 -------------------------------------------------*/
 fishInfo.forEach((fish) => {
-  //find HTML elementet for denne fisk
-  const fishElement = document.querySelectorAll("." + fish.className);
-  if (fishElement) {
-    //click-event til fisk elementet
-    fishElement.addEventListener("click", () => {
-      console.log("klikket på", fish.fishName);
-      //vis info overlay med fiskens data
-      showFishInfo(fish);
+  //Finder ALLe elementerne med denne klasse
+  document.querySelectorAll("." + fish.className).forEach((elem) => {
+    //tilføjer click-eventet
+    elem.addEventListener("click", () => {
+      //afspiller lyden
+      const sound = fishSound[fish.className];
+      if (sound) {
+        sound.currentTime = 0; //dette reseter lyden efter den har spillet
+        sound.play();
+      }
+      const fishDetails = `
+  <div class="info-content">
+    <h2 class="fiskType">${fish.fishName}</h2>
+    <p class="fiskInfo">${fish.infoText}</p>
+    <p class="sjovViden">${fish.funFact}</p>
+  </div>
+  <div class="bobbleAndImg">
+  <img src="./assets/svg/boble.svg" alt="boble" class="bobble"/>
+  <img src="${fish.image}" alt="${fish.fishName}" class="fishImage"/>
+  </div>
+  `;
+      //viser overlay med fiske-info
+      showFishInfo(fishDetails);
     });
-  } else {
-    console.error("Element for fisk ikke fundet:", fish.className);
-  }
+  });
 });
-
 /* -----------------------------------------------
 knapper til navigation
 -------------------------------------------------*/
@@ -156,171 +187,5 @@ if (fullscreenBtn) {
       document.documentElement.requestFullscreen();
     }
     console.log("fullscreenBtn virker");
-  });
-}
-
-/* -----------------------------------------------
-listerner til lyd
--------------------------------------------------*/
-//henter fiskene
-
-//blæksprutte
-const blæksprutteFisk = document.getElementById("blæksprutte");
-//haj
-const hajFisk = document.getElementById("haj");
-//krabbe
-const krabbeFisk = document.getElementById("krabbe");
-//pudserfisk
-const pudserFisk1 = document.getElementById("pudserFisk1");
-const pudserFisk2 = document.getElementById("pudserFisk2");
-const pudserFisk3 = document.getElementById("pudserFisk3");
-//pindsvinefisk
-const pindsvineFisk = document.getElementById("pindsvineFisk");
-const bangePindsvindefisk = document.getElementById("bange-pindsvineFisk");
-const nuttePrutteContainer = document.getElementById("nutte-prutte");
-//tun
-const tunFisk = document.getElementById("tunFisk");
-//klovnfisk
-const nemoFisk = document.getElementById("nemoFisk");
-const klovnFisk = document.getElementById("klovnFisk");
-//kirugfisk
-const kirugFisk = document.getElementById("kirugFisk");
-//rævefjæs
-const rævefjæsFisk = document.getElementById("ræveFjæs1");
-const rævefjæsFisk2 = document.getElementById("ræveFjæs2");
-
-//opretter lydobjekter
-//Blæksprutte
-const soundBlæksprutteFisk = new Audio();
-soundBlæksprutteFisk.src = "./assets/audio/jegervandmand.mp3";
-//Haj
-const soundHajFisk = new Audio();
-soundHajFisk.src = "./assets/audio/jegerenhaj.mp3";
-//Krabbe
-const soundKrabbeFisk = new Audio();
-soundKrabbeFisk.src = "./assets/audio/jegerenkrabbe.mp3";
-//Pudserfisk
-const soundPudserFisk1 = new Audio();
-soundPudserFisk1.src = "./assets/audio/jegerenurfisk.mp3";
-
-const soundPudserFisk2 = new Audio();
-soundPudserFisk2.src = "./assets/audio/jegerenurfisk.mp3";
-
-const soundPudserFisk3 = new Audio();
-soundPudserFisk3.src = "./assets/audio/jegerenurfisk.mp3";
-//Pindsvinefisk
-const soundPindsvineFisk = new Audio();
-soundPindsvineFisk.src = "./assets/audio/jegerenpindsvinefisk.mp3";
-
-const soundBangePindsvindefisk = new Audio();
-soundBangePindsvindefisk.src = "./assets/audio/jegerenpindsvinefisk.mp3";
-//Tun
-const soundTunFisk = new Audio();
-soundTunFisk.src = "./assets/audio/jegerentun.mp3";
-//klovnfisk
-const soundNemoFisk = new Audio();
-soundNemoFisk.src = "./assets/audio/jegerenklovnfisk.mp3";
-
-const soundKlovnFisk = new Audio();
-soundKlovnFisk.src = "./assets/audio/jegerenklovnfisk.mp3";
-//Kirugfisk
-const soundKirugFisk = new Audio();
-soundKirugFisk.src = "./assets/audio/jegerenkirugfisk.mp3";
-//Rævefjæs
-const soundRævefjæsFisk = new Audio();
-soundRævefjæsFisk.src = "./assets/audio/jegerenkirugfisk.mp3";
-
-const soundRævefjæsFisk2 = new Audio();
-soundRævefjæsFisk2.src = "./assets/audio/jegerenkirugfisk.mp3";
-
-//sætter lyttere på så den afspiller ved klick
-//blæksprutte
-if (blæksprutteFisk) {
-  blæksprutteFisk.addEventListener("click", () => {
-    soundBlæksprutteFisk.play();
-  });
-}
-//haj
-if (hajFisk) {
-  hajFisk.addEventListener("click", () => {
-    soundHajFisk.play();
-  });
-}
-//krabbe
-if (krabbeFisk) {
-  krabbeFisk.addEventListener("click", () => {
-    soundKrabbeFisk.play();
-  });
-}
-//pudserfisk
-if (pudserFisk1) {
-  pudserFisk1.addEventListener("click", () => {
-    soundPudserFisk1.play();
-  });
-}
-
-if (pudserFisk2) {
-  pudserFisk2.addEventListener("click", () => {
-    soundPudserFisk2.play();
-  });
-}
-
-if (pudserFisk3) {
-  pudserFisk3.addEventListener("click", () => {
-    soundPudserFisk3.play();
-  });
-}
-//pindsvinefisk
-
-if (nuttePrutteContainer) {
-  nuttePrutteContainer.addEventListener("click", () => {
-    console.log("TESTPUNKT");
-    //toggler mellem normal og bange tilstand
-    nuttePrutteContainer.classList.toggle("active");
-    //lyden
-    soundPindsvineFisk.currentTime = 0;
-    soundPindsvineFisk.play();
-    //gå tilbage til normal
-    soundPindsvineFisk.onended = () => {
-      nuttePrutteContainer.classList.remove("active");
-    };
-  });
-}
-
-//Tun
-if (tunFisk) {
-  tunFisk.addEventListener("click", () => {
-    soundTunFisk.play();
-  });
-}
-//klovnfisk
-if (nemoFisk) {
-  nemoFisk.addEventListener("click", () => {
-    soundNemoFisk.play();
-  });
-}
-
-if (klovnFisk) {
-  klovnFisk.addEventListener("click", () => {
-    soundKlovnFisk.play();
-  });
-}
-
-//kirugfisk
-if (kirugFisk) {
-  kirugFisk.addEventListener("click", () => {
-    soundKirugFisk.play();
-  });
-}
-//rævefjæs
-if (rævefjæsFisk) {
-  rævefjæsFisk.addEventListener("click", () => {
-    soundRævefjæsFisk.play();
-  });
-}
-
-if (rævefjæsFisk2) {
-  rævefjæsFisk2.addEventListener("click", () => {
-    soundRævefjæsFisk2.play();
   });
 }

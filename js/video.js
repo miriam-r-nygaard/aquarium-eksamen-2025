@@ -5,7 +5,7 @@ Array med fisketyper til overlay
 -------------------------------------------------*/
 const fishInfo = [
   {
-    className: "blæksprutte",
+    className: "octopus",
     fishName: "Blæksprutte",
     infoText:
       "Jeg er en blæksprutte, jeg sprutter blæk, når jeg er bange og så skifter jeg farve for at gemme mig!",
@@ -13,7 +13,7 @@ const fishInfo = [
     image: "./assets/svg/octopus-brown.svg",
   },
   {
-    className: "haj",
+    className: "shark",
     fishName: "Haj",
     infoText:
       "Jeg er en haj, jeg har levet længere tid end dinosauerne og jeg har super skarpe tænder!",
@@ -21,7 +21,7 @@ const fishInfo = [
     image: "./assets/svg/shark.svg",
   },
   {
-    className: "krabbe",
+    className: "crab",
     fishName: "Krabbe",
     infoText:
       "Jeg er en krabbe, og jeg er bevis på at man kan gå sidelæns igennem livet!",
@@ -30,7 +30,7 @@ const fishInfo = [
     image: "./assets/svg/crab.svg",
   },
   {
-    className: "pudserFisk",
+    className: "cleanerFish",
     fishName: "pudserfisk",
     infoText:
       "Jeg er en urfisken, jeg er den første med turbofinner og uden mig var der ingen Nemo!",
@@ -39,7 +39,7 @@ const fishInfo = [
     image: "./assets/svg/fisk-var-1.svg",
   },
   {
-    className: "pindsvineFisk",
+    className: "pufferFish",
     fishName: "Pindsvinefisk",
     infoText:
       "Jeg er en pindsvinefisk, og når jeg bliver bange, kan jeg puste mig op og blive dobbelt så stor, det er derfor andre fisk er bange for mig!",
@@ -48,7 +48,7 @@ const fishInfo = [
     image: "./assets/svg/nutte.svg",
   },
   {
-    className: "tunFisk",
+    className: "tuna",
     fishName: "Tun",
     infoText:
       "Jeg er tunnen, og jeg er en fartdjævel, jeg kan svømme hurtigere end de biler du ser i byen!",
@@ -57,7 +57,7 @@ const fishInfo = [
     image: "./assets/svg/tun.svg",
   },
   {
-    className: "KlovnFisk",
+    className: "clownFish",
     fishName: "Klovnfisk",
     infoText:
       "Jeg er en klovnfisk, jeg lever i søanemoner, fordi jeg ikke bliver brændt af dem, modsat andre fisk!",
@@ -66,7 +66,7 @@ const fishInfo = [
     image: "./assets/svg/klovnfisk.svg",
   },
   {
-    className: "kirugFisk",
+    className: "doctorFish",
     fishName: "Kirugfisk",
     infoText: "jeg er en kirugfisk, og der findes 75 forskellige arter af mig!",
     funFact:
@@ -74,7 +74,7 @@ const fishInfo = [
     image: "./assets/svg/kirugfisk.svg",
   },
   {
-    className: "ræveFjæs",
+    className: "foxFace",
     fishName: "Rævefjæs",
     infoText: "Jeg er en variant af kirugfisken!",
     funFact:
@@ -120,7 +120,7 @@ tilføjer klik lyttere til alle fiskene
 -------------------------------------------------*/
 fishInfo.forEach((fish) => {
   //find HTML elementet for denne fisk
-  const fishElement = document.getElementById(fish.className);
+  const fishElement = document.querySelectorAll("." + fish.className);
   if (fishElement) {
     //click-event til fisk elementet
     fishElement.addEventListener("click", () => {
@@ -177,7 +177,7 @@ const pudserFisk3 = document.getElementById("pudserFisk3");
 //pindsvinefisk
 const pindsvineFisk = document.getElementById("pindsvineFisk");
 const bangePindsvindefisk = document.getElementById("bange-pindsvineFisk");
-const nuttePrutteContainer = document.querySelector(".nutte-prutte");
+const nuttePrutteContainer = document.getElementById("nutte-prutte");
 //tun
 const tunFisk = document.getElementById("tunFisk");
 //klovnfisk

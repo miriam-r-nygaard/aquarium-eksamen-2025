@@ -334,7 +334,7 @@ Tang
 /* ---------------------------------------------------------
   blæksprutte
 --------------------------------------------------------- */
-.octopus {
+#blæksprutte {
   position: absolute;
   z-index: 10;
   animation: octopusani 2s infinite;
@@ -405,11 +405,11 @@ Tang
 /* ---------------------------------------------------------
   Fisk
 --------------------------------------------------------- */
-.fish {
+#ræveFjæs1 {
   position: relative;
 }
 
-.fisk {
+#ræveFjæs1 {
   cursor: pointer;
   position: absolute;
   will-change: transform;
@@ -417,11 +417,11 @@ Tang
   bottom: 30vh;
   left: 0;
   z-index: 2;
-  animation: fisk 12s ease-in-out infinite;
+  animation: ræveFjæs1 12s ease-in-out infinite;
 }
 
 /* Her er enhederne blevet ændret til vw og vh for at kunne ændre skærmstørrelser*/
-@keyframes fisk {
+@keyframes ræveFjæs1 {
   0% {
     transform: translateX(-10vw) translateY(0vh) rotate(0deg);
   }
@@ -448,17 +448,17 @@ Tang
   }
 }
 
-.fisk2 {
+#ræveFjæs2 {
   cursor: pointer;
   position: absolute;
   will-change: transform;
-  animation: fisk2 13s linear infinite;
+  animation: ræveFjæs2 13s linear infinite;
   left: 0;
   bottom: 40vh;
   z-index: 2;
 }
 
-@keyframes fisk2 {
+@keyframes ræveFjæs2 {
   0% {
     transform: translateX(-0vw) translateY(0vh) rotate(0deg);
   }
@@ -489,7 +489,7 @@ Tang
   pudser-fisk
 --------------------------------------------------------- */
 /* variant 1*/
-.fisk-var1 {
+#pudserFisk1 {
   cursor: pointer;
   position: absolute;
   will-change: transform;
@@ -517,7 +517,7 @@ Tang
 }
 
 /* variant 2*/
-.fisk-var2 {
+#pudserFisk2 {
   cursor: pointer;
   position: absolute;
   will-change: transform;
@@ -545,7 +545,7 @@ Tang
 }
 
 /* variant 3*/
-.fisk-var3 {
+#pudserFisk3 {
   cursor: pointer;
   position: absolute;
   will-change: transform;
@@ -577,7 +577,7 @@ pindesvinfisk
 --------------------------------------------------------- */
 /*standard*/
 
-.nutte-prutte .nutte {
+.nutte-prutte #pindsvieFisk {
   cursor: pointer;
   position: absolute;
   z-index: 10;
@@ -586,7 +586,7 @@ pindesvinfisk
   animation: nutteani 20s ease-in-out infinite;
 }
 
-.nutte-prutte .nutte-bange {
+.nutte-prutte #bange-pindsvineFisk {
   cursor: pointer;
   position: absolute;
   z-index: 10;
@@ -596,11 +596,11 @@ pindesvinfisk
 }
 
 /* Aktiv tilstand - normal fisk skjult, bange fisk synlig */
-.nutte-prutte.active .nutte {
+.nutte-prutte.active #pindsvineFisk {
   opacity: 0;
 }
 
-.nutte-prutte.active .nutte-bange {
+.nutte-prutte.active #bange-pindsvieFisk {
   opacity: 1;
 }
 
@@ -657,7 +657,7 @@ pindesvinfisk
 /* ---------------------------------------------------------
 Tun
 --------------------------------------------------------- */
-.tun {
+#tunFisk {
   cursor: pointer;
   position: absolute;
   top: 5vh;
@@ -689,7 +689,7 @@ nemo/ klovnfisk
 --------------------------------------------------------- */
 /* nemo*/
 
-.nemo {
+#nemoFisk {
   cursor: pointer;
   position: absolute;
   will-change: transform;
@@ -718,7 +718,7 @@ nemo/ klovnfisk
 }
 /* klovnfisk*/
 
-.klovnfisk {
+#klovnFisk {
   cursor: pointer;
   position: absolute;
   will-change: transform;
@@ -756,7 +756,7 @@ nemo/ klovnfisk
 /* ---------------------------------------------------------
 kirugfisk
 --------------------------------------------------------- */
-.kirugfisk {
+#kirugFisk {
   cursor: pointer;
   position: absolute;
   will-change: transform;
@@ -788,7 +788,7 @@ kirugfisk
 Haj
 --------------------------------------------------------- */
 
-.shark {
+#haj {
   position: absolute;
   bottom: 20vh;
   left: -30vw;
@@ -812,7 +812,7 @@ Haj
 Krabbe
 --------------------------------------------------------- */
 
-.crab {
+#krabbe {
   cursor: pointer;
   position: absolute;
   bottom: -3vh;

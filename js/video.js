@@ -84,7 +84,7 @@ const fishInfo = [
 ];
 
 /* -----------------------------------------------
-alle lydobjekter defineres her nu er de i én
+alle lydobjekter defineres her, nu er de i én.
 -------------------------------------------------*/
 const fishSound = {
   //opretter lydobjekter
@@ -167,7 +167,7 @@ fishInfo.forEach((fish) => {
 /* -----------------------------------------------
 knapper til navigation
 -------------------------------------------------*/
-/* home knap*/
+//home knap
 const homeBtn = document.getElementById("homeBtn");
 if (homeBtn) {
   homeBtn.addEventListener("click", () => {
@@ -177,7 +177,7 @@ if (homeBtn) {
 } else {
   console.error("homeBtn ikke fundet");
 }
-/* fullscreen knap*/
+//full screen
 const fullscreenBtn = document.getElementById("fullscreenBtn");
 if (fullscreenBtn) {
   fullscreenBtn.addEventListener("click", () => {
@@ -209,7 +209,6 @@ if (nuttePrutteContainer) {
     }, 10000);
   });
 }
-
 //blæksprutte
 if (sprutteTrutteContainer) {
   sprutteTrutteContainer.addEventListener("click", () => {

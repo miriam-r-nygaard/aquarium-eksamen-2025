@@ -84,8 +84,8 @@ overlay info boks
 .overlay {
   position: absolute;
   top: 0.5em;
-  right: 30vw;
-  max-width: 50em;
+  right: 25vw;
+  max-width: 60em;
   max-height: 20em;
   display: flex;
   flex-direction: row;
@@ -116,7 +116,7 @@ tekst stil
 /* overlay tekst */
 .infoContent {
   flex: 1;
-  max-width: 20em;
+  max-width: 30em;
   display: flex;
   flex-direction: column;
   gap: 0.5em;
@@ -130,13 +130,13 @@ tekst stil
   line-height: 1.5;
 }
 .fiskInfo {
-  font-size: 1em;
+  font-size: 1.5em;
   font-family: "playfair display", serif;
   color: black;
   line-height: 1.5;
 }
 .sjovViden {
-  font-size: 1em;
+  font-size: 1.5em;
   font-family: "playfair display", serif;
   font-style: italic;
   color: black;
@@ -259,7 +259,7 @@ billeder i overlay
 .melgr-sand {
   z-index: 2;
   width: 100%;
-  bottom: 0vh;
+  bottom: -4vh;
   right: -6vw;
 }
 
@@ -352,7 +352,7 @@ Tang
 
 .tang1 {
   position: absolute;
-  bottom: 5vh;
+  bottom: 1.5vh;
   left: 20vw;
   z-index: 2;
   animation: tangani 15s ease-in-out infinite;
@@ -412,7 +412,7 @@ Tang
   position: absolute;
   z-index: 2;
   animation: koral2 3s ease-in-out alternate infinite;
-  bottom: 7vh;
+  bottom: 2.5vh;
   left: 30vw;
 }
 
@@ -743,6 +743,18 @@ Tun
   animation: tun 10s infinite;
   z-index: 0;
 }
+/*dette gør at man kan klikke på tunen uden at ramme baggrunden*/
+#usynligTunFisk {
+  cursor: pointer;
+  position: absolute;
+  top: 5vh;
+  right: -15vw;
+  will-change: transform;
+  animation: tun 10s infinite;
+  z-index: 3;
+  opacity: 0;
+}
+
 @keyframes tun {
   0% {
     transform: translateX(10vw) translateY(0vh) scale(0.8);
@@ -776,6 +788,17 @@ nemo/ klovnfisk
   z-index: 4;
 }
 
+#usynligNemoFisk {
+  cursor: pointer;
+  position: absolute;
+  will-change: transform;
+  animation: nemo 30s infinite;
+  bottom: 5vh;
+  right: 5vw;
+  z-index: 5; /*højere index*/
+  opacity: 0; /*ikke synlig*/
+}
+
 @keyframes nemo {
   0% {
     transform: translateX(-0vw) translateY(0vh) rotateY(180deg);
@@ -793,6 +816,7 @@ nemo/ klovnfisk
     transform: translateX(-0vw) translateY(0vh) rotateY(0deg);
   }
 }
+
 /* klovnfisk*/
 
 #klovnFisk {
@@ -803,6 +827,17 @@ nemo/ klovnfisk
   bottom: 3vh;
   right: 5vw;
   z-index: 4;
+}
+
+#usynligKlovnFisk {
+  cursor: pointer;
+  position: absolute;
+  will-change: transform;
+  animation: klovnfisk 30s infinite;
+  bottom: 3vh;
+  right: 5vw;
+  z-index: 5;
+  opacity: 0;
 }
 
 @keyframes klovnfisk {
@@ -869,7 +904,7 @@ Haj
   position: absolute;
   bottom: 20vh;
   left: -30vw;
-  z-index: 3;
+  z-index: 2;
   animation: sharkani 25s linear infinite;
 }
 
@@ -896,6 +931,16 @@ Krabbe
   left: 0vw;
   z-index: 3;
   animation: crabani 20s ease-in-out infinite;
+}
+
+#usynligKrabbe {
+  cursor: pointer;
+  position: absolute;
+  bottom: -3vh;
+  left: 0vw;
+  z-index: 5;
+  animation: crabani 20s ease-in-out infinite;
+  opacity: 0; /* man kan ikke se dette lag*/
 }
 
 @keyframes crabani {

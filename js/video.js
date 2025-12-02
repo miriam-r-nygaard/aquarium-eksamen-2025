@@ -142,6 +142,7 @@ fishInfo.forEach((fish) => {
   document.querySelectorAll("." + fish.className).forEach((elem) => {
     //tilføjer click-eventet
     elem.addEventListener("click", () => {
+      console.log("fisk er fundet");
       //afspiller lyden
       const sound = fishSound[fish.className];
       if (sound) {

@@ -31,7 +31,7 @@
 }
 
 /* ---------------------------------------------------------
-  Knapper til navigation
+Knapper til navigation
 --------------------------------------------------------- */
 
 /* knapper position*/
@@ -72,7 +72,7 @@
 }
 
 /*hover effekt på knapper*/
-.optionsBtn:hover {
+.navigationsBtn:hover {
   background-color: rgba(114, 168, 197, 0.5); /* øger synlighed ved hover*/
   transform: scale(1.05); /* let forstørrelse ved hover*/
   transition: all0.3s ease; /* glidende overgang*/

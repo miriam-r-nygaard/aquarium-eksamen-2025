@@ -10,7 +10,7 @@ const fishInfo = [
     infoText:
       "Jeg er en blæksprutte, jeg sprutter blæk, når jeg er bange og så skifter jeg farve for at gemme mig!",
     funFact: "Fun fact: Jeg har ni hjerner, otte af dem sidder i mine arme!",
-    image: "./assets/svg/octopus-brown.svg",
+    image: "./assets/svg/octopusoverlay.svg",
   },
   {
     className: "shark",
@@ -18,7 +18,7 @@ const fishInfo = [
     infoText:
       "Jeg er en haj, jeg har levet længere tid end dinosauerne og jeg har super skarpe tænder!",
     funFact: "Fun Fact: Jeg har rokketænder gennem hele mit liv",
-    image: "./assets/svg/shark.svg",
+    image: "./assets/svg/sharkoverlay.svg",
   },
   {
     className: "crab",
@@ -27,7 +27,7 @@ const fishInfo = [
       "Jeg er en krabbe, og jeg er bevis på at man kan gå sidelæns igennem livet!",
     funFact:
       "Fun Fact: det ligner jeg tisser ud af øjnene! det er dog bare affaldstoffer og lige under mine øjne",
-    image: "./assets/svg/crab.svg",
+    image: "./assets/svg/craboverlay.svg",
   },
   {
     className: "cleanerFish",
@@ -36,7 +36,7 @@ const fishInfo = [
       "Jeg er en urfisken, jeg er den første med turbofinner og uden mig var der ingen Nemo!",
     funFact:
       "Fun Fact: Jeg har min hel egen 'bilvask', men istedet for biler er det fisk jeg renser!",
-    image: "./assets/svg/fisk-var-1.svg",
+    image: "./assets/svg/cleanerfishoverlay.svg",
   },
   {
     className: "nuttePrutte",
@@ -45,7 +45,7 @@ const fishInfo = [
       "Jeg er en pindsvinefisk, og når jeg bliver bange, kan jeg puste mig op og blive dobbelt så stor, det er derfor andre fisk er bange for mig!",
     funFact:
       "Fun Fact: Mine pigge er mega giftige, jeg har gift nok til at slå 30 mennesker ihjel",
-    image: "./assets/svg/nutte.svg",
+    image: "./assets/svg/pufferfishoverlay.svg",
   },
   {
     className: "tuna",
@@ -54,7 +54,7 @@ const fishInfo = [
       "Jeg er tunnen, og jeg er en fartdjævel, jeg kan svømme hurtigere end de biler du ser i byen!",
     funFact:
       "Fun Fact: Jeg kan blive op til 4 meter lang, det er længere end hvis end to voksne mennekser som står på hinandens skuldre!",
-    image: "./assets/svg/tun.svg",
+    image: "./assets/svg/tunaoverlay.svg",
   },
   {
     className: "clownFish",
@@ -63,7 +63,7 @@ const fishInfo = [
       "Jeg er en klovnfisk, jeg lever i søanemoner, fordi jeg ikke bliver brændt af dem, modsat andre fisk!",
     funFact:
       " Fun Fact: Jeg hjælper søanemonerne med at lokke andre fisk til, som bliver til søanemonens mad!",
-    image: "./assets/svg/klovnfisk.svg",
+    image: "./assets/svg/clownfishoverlay.svg",
   },
   {
     className: "doctorFish",
@@ -71,7 +71,7 @@ const fishInfo = [
     infoText: "jeg er en kirugfisk, og der findes 75 forskellige arter af mig!",
     funFact:
       "Fun Fact: Min skapel, der sidder ved min hale, er lige så skrap som en kniv!",
-    image: "./assets/svg/kirugfisk.svg",
+    image: "./assets/svg/suregeonfishoverlay.svg",
   },
   {
     className: "foxFace",
@@ -79,7 +79,7 @@ const fishInfo = [
     infoText: "Jeg er en variant af kirugfisken!",
     funFact:
       "Fun Fact: Jeg er vegetar og forskrækker du mig bliver jeg kedelig i farven!",
-    image: "./assets/svg/fisk.svg",
+    image: "./assets/svg/foxfaceoverlay.svg",
   },
 ];
 
@@ -131,7 +131,7 @@ function showFishInfo(html) {
     //fjerner overlay efter 6 sekunder
     setTimeout(() => {
       infoBoks.classList.remove("active");
-    }, 20000);
+    }, 10000);
   }
 }
 /* -----------------------------------------------

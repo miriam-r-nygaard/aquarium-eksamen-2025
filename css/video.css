@@ -445,7 +445,7 @@ Tang
 --------------------------------------------------------- */
 .koral {
   position: absolute;
-  z-index: 4;
+  z-index: 5;
   animation: koral 3s ease-in-out alternate infinite;
   bottom: -12vh;
   left: -3vw;
@@ -1011,6 +1011,104 @@ Krabbe
     transform: translateX(1000vw) rotate(0deg);
   }
 }
+
+/* ---------------------------------------------------------
+  danneborgsreje
+--------------------------------------------------------- */
+#reje {
+  cursor: pointer;
+  position: absolute;
+  bottom: -15vh;
+  left: 10vw;
+  z-index: 4;
+  animation: rejeani 20s ease-in-out infinite;
+}
+
+#usynligReje {
+  cursor: pointer;
+  position: absolute;
+  bottom: -15vh;
+  left: 10vw;
+  z-index: 5;
+  animation: rejeani 20s ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes rejeani {
+  0% {
+    transform: translateX(0vw) scale(0.3) rotateY(0deg);
+  }
+  25% {
+    transform: translateX(-10vw) scale(0.3) rotateY(0deg);
+  }
+  30% {
+    transform: translateX(-10vw) scale(0.3) rotateY(180deg);
+  }
+  50% {
+    transform: translateX(0vw) scale(0.3) rotateY(0deg);
+  }
+  75% {
+    transform: translateX(-10vw) scale(0.3) rotateY(0deg);
+  }
+  80% {
+    transform: translateX(-10vw) scale(0.3) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(0vw) scale(0.3) rotateY(0deg);
+  }
+}
+
+/* ---------------------------------------------------------
+  fiskestime
+--------------------------------------------------------- */
+#lilleFisk {
+  cursor: pointer;
+  position: absolute;
+  top: 5vh;
+  left: -15vw;
+  will-change: transform;
+  animation: stime 10s infinite;
+  z-index: 0;
+}
+#usynligLilleFisk {
+  cursor: pointer;
+  position: absolute;
+  top: 5vh;
+  left: -15vw;
+  will-change: transform;
+  animation: stime 10s infinite;
+  z-index: 5;
+  opacity: 0;
+}
+
+#lilleFisk2 {
+  cursor: pointer;
+  position: absolute;
+  top: 5vh;
+  left: -35vw;
+  will-change: transform;
+  animation: stime 10s infinite;
+  z-index: 0;
+}
+#usynligLilleFisk2 {
+  cursor: pointer;
+  position: absolute;
+  top: 5vh;
+  left: -15vw;
+  will-change: transform;
+  animation: stime 10s infinite;
+  z-index: 5;
+  opacity: 0;
+}
+@keyframes stime {
+  0% {
+    transform: translateX(-10vw);
+  }
+  100% {
+    transform: translateX(135vw);
+  }
+}
+
 /* ---------------------------------------------------------
 @media til at gøre siden responsiv 
 iPad Air 2020 (landskabs: 2360x1640 -> CSS: 1180x820)

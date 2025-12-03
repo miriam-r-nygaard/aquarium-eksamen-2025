@@ -81,6 +81,23 @@ const fishInfo = [
       "Fun Fact: Jeg er vegetar og forskrækker du mig bliver jeg kedelig i farven!",
     image: "./assets/svg/foxfaceoverlay.svg",
   },
+  {
+    className: "shrimp",
+    fishName: "Danneborgs reje",
+    infoText:
+      "Hejsa, Jeg er en danneborgsreje, jeg gør fiskene rene og så bærer jeg farverne fra det danske flag!",
+    funFact:
+      "Fun fact: jeg bliver født som dreng, men kan skifte køn senere i livet!",
+    image: "./assets/svg/shrimpoverlay.svg",
+  },
+  {
+    className: "smallFish",
+    fishName: "Anthias",
+    infoText:
+      "Jeg er en Anthias, når jeg svømmer i en fiskestime, ser jeg større ud end jeg er!",
+    funFact: "Fun fact: Jeg findes i utrolig mange farver og størrelser",
+    image: "./assets/svg/smallfishoverlay.svg",
+  },
 ];
 
 /* -----------------------------------------------
@@ -106,6 +123,8 @@ const fishSound = {
   doctorFish: new Audio("./assets/audio/jegerenkirugfisk.mp3"),
   //Rævefjæs
   foxFace: new Audio("./assets/audio/jegerenkirugfisk.mp3"),
+  //danneborgsreje
+  shrimp: new Audio("./assets/audio/jegerenreje.mp3"),
 };
 
 /* -----------------------------------------------

@@ -977,10 +977,7 @@ Krabbe
 /* ---------------------------------------------------------
 @media til at gøre siden responsiv
 --------------------------------------------------------- */
-/* Responsive scene-scaling - mobile first */
-:root {
-  --ui-scale: 1; /*standard skærmstørrelse, ingen ændring*/
-}
+
 /* først bestemmer jeg standarden for .scene */
 .scene {
   transform-origin: top center;
@@ -988,24 +985,21 @@ Krabbe
   /* hvis du vil centrere på store skærme: */
   margin: 0;
   max-width: 100vw;
+  max-height: 100vh;
 }
 
 /* Ipad (landskabsmode) dette er standard opløsningen for Ipad i følge Apple */
-@media (max-height: 1024px) and (max-width: 1366px) {
-  :root {
-    --ui-scale: 0.8;
-  }
+@media (max-height: 1640px) and (max-width: 2360px) {
   .scene {
-    max-width: 1366px;
+    max-width: 2360px;
+    max-height: 1640px;
   }
 }
 /* laptop macbook */
-@media (max-height: 1050px) and (max-width: 1680px) {
-  :root {
-    --ui-scale: 1;
-  }
+@media (max-height: 1664px) and (max-width: 2560px) {
   .scene {
-    max-width: 1680px;
+    max-height: 1664px;
+    max-width: 2560px;
   }
 }
 /* note fiks koral3 og tang1 de ligger forkert i design til Ipad. ryk bg-rev-v lidt til venstre. fiks overlay, den tilpasser sig ikke*/

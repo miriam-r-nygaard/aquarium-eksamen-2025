@@ -119,23 +119,25 @@ document.addEventListener("DOMContentLoaded", function () {
 /* -----------------------------------------------
 lyd der afspiller når man går ind på siden
 -------------------------------------------------*/
-const soundClickOnFish = new Audio("./assets/audio/sevideooglaer.mp3");
 const velkommenBoks = document.getElementById("velkommenBoks");
-function showVelkommenBoks(html) {
-  if (infoBoks) {
-    velkommenBoks.innerHTML = html;
-    // nu er overlay synligt gennem css klassen
-    velkommenBoks.classList.add("active");
+const velkommenSound = new Audio("./assets/audio/sevideooglaer.mp3");
 
-    //fjerner overlay efter 6 sekunder
+function showVelkommen() {
+  if (velkommenBoks) {
+    velkommenBoks.classList.add("active");
+    //lyd spiller
+    velkommenSound.play();
+
+    //fjerner overlay efter lyd
     setTimeout(() => {
       velkommenBoks.classList.remove("active");
-    }, 800);
+    }, 3000);
   }
 }
+
 window.onload = function () {
   setTimeout(function () {
-    soundClickOnFish.play();
+    showVelkommen();
   }, 800);
 };
 

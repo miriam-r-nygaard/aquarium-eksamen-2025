@@ -117,6 +117,29 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* -----------------------------------------------
+lyd der afspiller når man går ind på siden
+-------------------------------------------------*/
+const soundClickOnFish = new Audio("./assets/audio/sevideooglaer.mp3");
+const velkommenBoks = document.getElementById("velkommenBoks");
+function showVelkommenBoks(html) {
+  if (infoBoks) {
+    velkommenBoks.innerHTML = html;
+    // nu er overlay synligt gennem css klassen
+    velkommenBoks.classList.add("active");
+
+    //fjerner overlay efter 6 sekunder
+    setTimeout(() => {
+      velkommenBoks.classList.remove("active");
+    }, 800);
+  }
+}
+window.onload = function () {
+  setTimeout(function () {
+    soundClickOnFish.play();
+  }, 800);
+};
+
+/* -----------------------------------------------
 info overlay til fiskene
 -------------------------------------------------*/
 //finder overlay i HTML

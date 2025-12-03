@@ -173,6 +173,7 @@ billeder i overlay
   right: 0;
   z-index: 1;
 }
+
 .fishImage {
   position: absolute;
   width: 65%;
@@ -199,6 +200,15 @@ billeder i overlay
     rgba(0, 0, 0, 0) 90%
   );
   backdrop-filter: blur(2em);
+}
+/* ---------------------------------------------------------
+velkommen boks
+--------------------------------------------------------- */
+.velkommen {
+  font-size: 1.5em;
+  font-family: "playfair display", serif;
+  color: black;
+  line-height: 1.5;
 }
 
 /* ---------------------------------------------------------

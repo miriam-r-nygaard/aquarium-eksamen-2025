@@ -151,3 +151,32 @@ Knapper
   transform: scale(1.05); /* let forstørrelse ved hover*/
   transition: all0.3s ease; /* glidende overgang*/
 }
+
+/* ---------------------------------------------------------
+@media til at gøre siden responsiv 
+iPad Air 2020 (landskabs: 2360x1640 -> CSS: 1180x820)
+Bemærk: iPad Air 2020 har pixel ratio 2, så vi arbejder med halve pixels
+--------------------------------------------------------- */
+
+/* Ipad (landskabsmode) dette er standard opløsningen for Ipad i følge Apple */
+
+@media only screen and (min-device-width: 820px) and (max-device-width: 1180px) and (orientation: landscape) {
+  /* Reset til at fylde hele skærmen */
+  .scene {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    transform: none !important;
+  }
+
+  /* Tilføj denne for at sikre body/html fylder */
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+}

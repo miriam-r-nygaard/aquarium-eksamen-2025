@@ -20,9 +20,14 @@
         Nutte <br />
         - og balladen i havet
       </h1>
-      <p>Spil eller se fiskene!</p>
+      <p class="opfordring">Spil eller se fiskene!</p>
     </div>
-
+    <img
+      id="logoNord"
+      class="nordLogo"
+      src="./assets/svg/storcenternord.svg"
+      alt="Storcenter Nord Logo"
+    />
     <!--karakterne-->
     <div class="mainCharacterHoldet">
       <div class="nutteWrapper">
@@ -42,19 +47,28 @@
         />
       </div>
     </div>
-
     <!-- her laver jeg knapper, der kommer til at virke gennem JS-->
     <!--spil knap-->
     <div class="optionsBtnHolder">
       <button id="spilBtn" class="optionsBtn" alt="rengør akvarie spillet.">
         <h3>Spil</h3>
       </button>
+      <img class="miniNutte" src="./assets/svg/nutte-puff.svg" alt="nutte" />
       <!--video knap-->
       <button id="videoBtn" class="optionsBtn" alt="afspil video.">
         <h3>Se fiskene!</h3>
       </button>
+      <img
+        class="miniSprutte"
+        src="./assets/svg/octopus-blue.svg"
+        alt="sprutte"
+      />
       <!-- her slutter knapperne -->
     </div>
+    <!--nederste tekst -->
+    <p class="fodring">
+      Se Nutte og de andre fisk blive fodret hver lørdag klokken 13!
+    </p>
 
     <!--link js-->
     <script src="./js/landing.js"></script>

@@ -66,7 +66,15 @@ tekst stil
 .landing p {
   font-size: 2em;
 }
-
+/* ---------------------------------------------------------
+logo
+--------------------------------------------------------- */
+.nordLogo {
+  position: absolute;
+  top: 2em;
+  left: 2em;
+  width: 10em;
+}
 /* ---------------------------------------------------------
 Main characther (nutte og blæksprutte)
 --------------------------------------------------------- */
@@ -151,6 +159,25 @@ Knapper
   transform: scale(1.05); /* let forstørrelse ved hover*/
   transition: all0.3s ease; /* glidende overgang*/
 }
+/* ---------------------------------------------------------
+vejledende mini ikoner
+--------------------------------------------------------- */
+.miniNutte {
+  position: absolute;
+  width: 5em;
+  height: auto;
+  left: 27vw;
+  bottom: 18vh;
+  z-index: -1;
+}
+.miniSprutte {
+  position: absolute;
+  width: 5em;
+  height: auto;
+  right: 27vw;
+  bottom: 18vh;
+}
+/* --
 
 /* ---------------------------------------------------------
 @media til at gøre siden responsiv 

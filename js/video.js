@@ -8,7 +8,7 @@ const fishInfo = [
     className: "sprutteTrutte",
     fishName: "Blæksprutte",
     infoText:
-      "Jeg er en blæksprutte, jeg sprutter blæk, når jeg er bange og så skifter jeg farve for at gemme mig!",
+      "Hejsa! Jeg er en blæksprutte, jeg sprutter blæk, når jeg er bange og så skifter jeg farve for at gemme mig!",
     funFact: "Fun fact: Jeg har ni hjerner, otte af dem sidder i mine arme!",
     image: "./assets/svg/octopusoverlay.svg",
   },
@@ -106,7 +106,7 @@ alle lydobjekter defineres her, nu er de i én.
 const fishSound = {
   //opretter lydobjekter
   //Blæksprutte
-  sprutteTrutte: new Audio("./assets/audio/jegervandmand.mp3"),
+  sprutteTrutte: new Audio("./assets/audio/jegerblaeksprutte.mp3"),
   //Haj
   shark: new Audio("./assets/audio/jegerenhaj.mp3"),
   //Krabbe
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
 lyd der afspiller når man går ind på siden
 -------------------------------------------------*/
 const velkommenBoks = document.getElementById("velkommenBoks");
-const velkommenSound = new Audio("./assets/audio/sevideooglaer.mp3");
+const velkommenSound = new Audio("./assets/audio/klikpaafiskene.mp3");
 
 function showVelkommen() {
   if (velkommenBoks) {
